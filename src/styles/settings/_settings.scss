@@ -1,0 +1,10 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+}
+
+[class*='__container'] {
+    max-width: $maxWidthContainer + px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
