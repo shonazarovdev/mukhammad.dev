@@ -1,6 +1,11 @@
 // Global
 @import './global/normalize';
 @import './global/variables';
+@import './global/fonts';
 
 // Settings
+@import './settings/mixins';
 @import './settings/settings';
+
+// Components
+@import './components/header';

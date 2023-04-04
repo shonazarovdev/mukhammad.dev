@@ -1,10 +1,42 @@
+body {
+    font-weight: 400;
+    font-family: $fontPoppins, sans-serif;
+    font-size: $fontSize + px;
+    font-style: normal;
+    line-height: calc(22 / $fontSize * 100%);
+    background-color: $bodyColor;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 11px;
+    @include transition();
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 5px $whiteColor;
+    background: $thirdyColor;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 8px $whiteColor;
+}
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
 }
 
 [class*='__container'] {
-    max-width: $maxWidthContainer + px;
+    max-width: $minWidthContainer + px;
     padding: 0px 15px;
     margin: 0px auto;
 }
