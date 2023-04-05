@@ -1,3 +1,4 @@
+import useWindowSize from '@/hooks/useWindowSize';
 import clsx from 'clsx';
 import React, { FC, useState } from 'react';
 
@@ -11,6 +12,8 @@ interface IHeader {
 
 export const Header: FC<IHeader> = ({ data }) => {
     const [openMenu, setOpenMenu] = useState(false);
+    const { width } = useWindowSize();
+    const isLarge = width && width >= 1440;
 
     const handleOpenMenu = () => {
         setOpenMenu(!openMenu);
@@ -23,7 +26,7 @@ export const Header: FC<IHeader> = ({ data }) => {
     return (
         <div className="header">
             <div className="header__wrapper">
-                <div className="header__body">
+                <div className={clsx('header__body', isLarge && 'container')}>
                     <div className="header__main">
                         <h3 className="header__logo" onClick={pageUp}>
                             Mukhammad.dev

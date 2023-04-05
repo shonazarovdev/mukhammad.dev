@@ -1,11 +1,12 @@
-import { Footer, Header } from '@components/index';
-import { menuList } from '@helpers/data';
+import { Main } from '@components/index';
+import { Page } from './layout';
 
 function App() {
     return (
         <div className="wrapper">
-            <Header data={menuList} />
-            {/* <Footer /> */}
+            <Page>
+                <Main />
+            </Page>
         </div>
     );
 }

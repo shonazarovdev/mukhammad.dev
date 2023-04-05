@@ -10,6 +10,7 @@
         top: 0;
         left: 0;
         z-index: 50;
+        background-color: $bodyColor;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
     }
     // .header__body
@@ -17,8 +18,8 @@
         display: flex;
         align-items: center;
         padding-block: 5px;
-        @include adaptiveValue('padding-inline', 40, 20);
         min-height: $headerHeight;
+        padding-inline: 20px;
     }
     // .header__main
     &__main {
