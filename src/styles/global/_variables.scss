@@ -1,6 +1,6 @@
-$fontPoppins: 'Poppins';
-$fontMulish: 'Mulish';
-$fontNoto: 'Noto sans';
+$fontPoppins: 'Poppins', sans-serif;
+$fontMulish: 'Mulish', sans-serif;
+$fontNoto: 'Noto sans', sans-serif;
 $fontSize: 17;
 
 $minWidth: 320px;
@@ -13,10 +13,11 @@ $md3: 767.98;
 $md4: 479.98;
 $headerHeight: 80px;
 
-$mainColor: #292f3b;
+$mainColor: #0f0f0f;
 $secondaryColor: #645f61;
 $thirdyColor: #01bdb6;
 $blackColor: #000000;
 $whiteColor: #ffffff;
 $logoColor: #000000;
 $bodyColor: #ffffff;
+$sectionColor: #f9f9f9;
