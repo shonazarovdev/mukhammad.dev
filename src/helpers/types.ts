@@ -8,6 +8,14 @@ export type TMenuList = NumberID & {
 }
 
 export type TSocialMediaList = NumberID & {
+    name: string
     title: string
     link: string
+}
+
+export type THero = {
+    title: string
+    titleIcon: string
+    desc: string
+    descIcon: string
 }

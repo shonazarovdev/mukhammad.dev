@@ -1,1 +1,3 @@
 // Update 1.0.1 = Header finish
+// Update 1.0.2 = Footer finish
+// Update 1.0.3 = Hero Section finish

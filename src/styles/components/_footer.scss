@@ -34,7 +34,7 @@
 }
 .footer-list {
     display: flex;
-    column-gap: 1em;
+    column-gap: 1.5em;
     @media (max-width: #{$md3 + px}) {
         column-gap: 2em;
     }
