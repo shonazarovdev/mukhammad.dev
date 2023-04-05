@@ -1,0 +1,26 @@
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    padding: 15px 83px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: $fontSource;
+    line-height: 1.5;
+    text-align: center;
+    @include transition(0.3, ease, transform);
+
+    @media (any-hover: hover) {
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.btn-primary {
+    border: 1px solid $thirdyColor;
+    background-color: $thirdyColor;
+    color: #333;
+}

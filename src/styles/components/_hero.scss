@@ -1,0 +1,115 @@
+.hero {
+    padding-top: $headerHeight;
+    height: 100vh;
+    // .hero__wrapper
+    &__wrapper {
+        position: relative;
+        height: 100%;
+        background: linear-gradient(
+                to right,
+                rgba(245, 245, 245, 0.8),
+                rgba(245, 245, 245, 0.8)
+            ),
+            url('/images/hero-background.svg');
+    }
+    // .hero__container
+    &__container {
+        height: 100%;
+    }
+    // .hero__body
+    &__body {
+        height: 100%;
+        @include flex();
+    }
+    // .hero__main
+    &__main {
+        @include flex(center, start, column);
+    }
+    // .hero__stacks
+    &__stacks {
+        position: absolute;
+        left: 0;
+        @media (min-width: #{$md4 + px}) {
+            bottom: 50%;
+            @include adaptiveValue('bottom', 350, 50);
+            transform: translateY(50%);
+        }
+        @media (max-width: #{$md4 + px}) {
+            border-radius: 5px 5px 5px 5px;
+            @include flex();
+            bottom: 0;
+            @include adaptiveValue('left', 80, 30);
+        }
+    }
+    // .hero__button
+    &__button {
+        width: 100%;
+        @include flex();
+        @include adaptiveValue('margin-top', 80, 30);
+    }
+}
+.title {
+    @include adaptiveValue('font-size', 65, 38);
+    @include adaptiveValue('line-height', 69, 44);
+    color: $mainColor;
+    text-align: center;
+    @include adaptiveValue('margin-bottom', 40, 17);
+}
+.subtitle {
+    @include adaptiveValue('font-size', 20, 17);
+    @include adaptiveValue('line-height', 22, 18);
+    width: 85%;
+    color: $secondaryColor;
+    text-align: center;
+}
+.stack-list {
+    background-color: $bodyColor;
+    border-radius: 0 5px 5px 0;
+    overflow: hidden;
+    // .stack-list__item
+    &__item {
+        padding: 5px;
+        padding-right: 3px;
+    }
+    // .stack-list__link
+    &__link {
+        @include flex();
+        padding: 10px;
+        border-radius: 5px;
+        color: $secondaryColor;
+        @include transition(0.2);
+        @media (any-hover: hover) {
+            &:hover {
+                &.Telegram {
+                    color: #0088cc;
+                }
+                &.LinkedIn {
+                    color: #006192;
+                }
+                &.Github {
+                    color: #211f1f;
+                }
+                color: $mainColor;
+                background: #f1f1f1;
+            }
+        }
+    }
+}
+.waving-icon {
+    margin-left: -3px;
+    display: inline-block;
+    animation: waving 1.5s ease-in-out infinite;
+    transition: all 0.2s ease-in-out;
+}
+
+@keyframes waving {
+    0% {
+        transform: rotate(15deg) translate(10px, -10px);
+    }
+    50% {
+        transform: rotate(-25deg) translate(0, 0);
+    }
+    100% {
+        transform: rotate(15deg) translate(10px, -10px);
+    }
+}

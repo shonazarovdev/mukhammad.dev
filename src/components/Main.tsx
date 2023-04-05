@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
+import { Hero } from '@components/index';
+import { heroData, socialMediaList } from '@/helpers/data';
 
 export const Main: FC = () => {
     return (
         <div className="main">
-            <div className="main__container">Main</div>
+            <Hero social={socialMediaList} {...heroData} />
         </div>
     );
 };
