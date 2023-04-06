@@ -3,7 +3,7 @@ body {
     font-family: $fontPoppins, sans-serif;
     font-size: $fontSize + px;
     font-style: normal;
-    line-height: calc(22 / $fontSize * 100%);
+    line-height: 1.5;
     background-color: $bodyColor;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const JavascriptSvg = () => {
+export const JavaScriptSvg = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

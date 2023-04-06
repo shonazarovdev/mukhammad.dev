@@ -2,11 +2,11 @@ import { CssSvg } from "./CssSvg";
 import { GitSvg } from "./GitSvg";
 import { GithubSvg } from "./GithubSvg";
 import { HtmlSvg } from "./HtmlSvg";
-import { JavascriptSvg } from "./JavascriptSvg";
+import { JavaScriptSvg } from "./JavaScriptSvg";
 import { NextSvg } from "./NextSvg";
 import { ReactSvg } from "./ReactSvg";
 import { SassSvg } from "./SassSvg";
 import { StyledCompSvg } from "./StyledCompSvg";
-import { TypescriptSvg } from "./TypescriptSvg";
+import { TypeScriptSvg } from "./TypeScriptSvg";
 
-export { CssSvg, GitSvg, GithubSvg, HtmlSvg, JavascriptSvg, NextSvg, ReactSvg, SassSvg, StyledCompSvg, TypescriptSvg }
+export { CssSvg, GitSvg, GithubSvg, HtmlSvg, JavaScriptSvg, NextSvg, ReactSvg, SassSvg, StyledCompSvg, TypeScriptSvg }

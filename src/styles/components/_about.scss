@@ -1,0 +1,130 @@
+.about {
+    // .about__wrapper
+    &__wrapper {
+    }
+    // .about__container
+    &__container {
+    }
+    // .about__body
+    &__body {
+    }
+    // .about-content
+    &-content {
+    }
+    // .about__main
+    &__main {
+        display: grid;
+        gap: 3em;
+        @media (min-width: #{$md3 + px}) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+.about-content {
+    margin-top: 90px;
+    // .about-content__left
+    &__left {
+        justify-self: center;
+    }
+    // .about-content__right
+    &__right {
+    }
+    // .about-content__list
+    &__list {
+        margin-bottom: 40px;
+    }
+    // .about-content__item
+    &__item {
+    }
+}
+.skills {
+    padding: 5px;
+    // .skills__list
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    // .skills__item
+    &__item {
+        padding: 10px 15px;
+        column-gap: 10px;
+        border-radius: 10px;
+        @include flex(center, start);
+        background-color: #f1f1f1;
+        cursor: pointer;
+        font-weight: 600;
+        @include transition(0.2, ease, background);
+
+        @media (any-hover: hover) {
+            &:hover {
+                &.HTML {
+                    background-color: rgba(240, 101, 41, 0.5);
+                }
+                &.CSS {
+                    background-color: rgba(41, 98, 255, 0.5);
+                }
+                &.JavaScript {
+                    background-color: rgba(240, 219, 79, 0.5);
+                }
+                &.TypeScript {
+                    background-color: rgba(0, 122, 204, 0.5);
+                }
+                &.Sass {
+                    background-color: rgba(204, 102, 153, 0.5);
+                }
+                &.React {
+                    background-color: rgba(97, 218, 251, 0.5);
+                }
+                &.Next {
+                    background-color: rgba(5, 66, 124, 0.5);
+                }
+                &.Git {
+                    background-color: rgba(243, 79, 41, 0.5);
+                }
+                &.Github {
+                    background-color: rgba(127, 127, 127, 0.5);
+                }
+                &.Styled {
+                    background-color: rgba(165, 56, 136, 0.5);
+                }
+            }
+        }
+        @media (max-width: #{$md3 + px}) {
+            &.HTML {
+                background-color: rgba(240, 101, 41, 0.5);
+            }
+            &.CSS {
+                background-color: rgba(41, 98, 255, 0.5);
+            }
+            &.JavaScript {
+                background-color: rgba(240, 219, 79, 0.5);
+            }
+            &.TypeScript {
+                background-color: rgba(0, 122, 204, 0.5);
+            }
+            &.Sass {
+                background-color: rgba(204, 102, 153, 0.5);
+            }
+            &.React {
+                background-color: rgba(97, 218, 251, 0.5);
+            }
+            &.Next {
+                background-color: rgba(5, 66, 124, 0.5);
+            }
+            &.Git {
+                background-color: rgba(243, 79, 41, 0.5);
+            }
+            &.Github {
+                background-color: rgba(127, 127, 127, 0.5);
+            }
+            &.Styled {
+                background-color: rgba(165, 56, 136, 0.5);
+            }
+        }
+    }
+    // .skills-icon
+    &-icon {
+        @include flex();
+    }
+}
