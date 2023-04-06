@@ -34,7 +34,7 @@ export const Hero: FC<IHero> = ({
     };
 
     return (
-        <section className="hero">
+        <section id="home" className="hero">
             <div className="hero__wrapper">
                 <div className="hero__container">
                     <div className="hero__body">
@@ -73,6 +73,9 @@ export const Hero: FC<IHero> = ({
                                 </li>
                             ))}
                         </ul>
+                        <div className="mouse__wrapper">
+                            <div className="mouse"></div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -19,3 +19,8 @@ export type THero = {
     desc: string
     descIcon: string
 }
+
+export type TSkillsList = NumberID & {
+    title: string
+    icon: string
+}

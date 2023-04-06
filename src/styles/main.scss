@@ -6,6 +6,7 @@
 // Settings
 @import './settings/mixins';
 @import './settings/settings';
+@import './settings/ui';
 
 // Components
 @import './components/header';
@@ -13,3 +14,4 @@
 @import './components/main';
 @import './components/hero';
 @import './components/buttons';
+@import './components/about';

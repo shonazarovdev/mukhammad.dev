@@ -97,19 +97,75 @@
 }
 .waving-icon {
     margin-left: -3px;
+    animation-name: waving;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
     display: inline-block;
-    animation: waving 1.5s ease-in-out infinite;
-    transition: all 0.2s ease-in-out;
 }
-
 @keyframes waving {
     0% {
-        transform: rotate(15deg) translate(10px, -10px);
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    }
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
     }
     50% {
-        transform: rotate(-25deg) translate(0, 0);
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
     }
     100% {
-        transform: rotate(15deg) translate(10px, -10px);
+        transform: rotate(0deg);
+    }
+}
+.mouse__wrapper {
+    @media (min-width: #{$md3 + px}) {
+        position: absolute;
+        bottom: 25px;
+    }
+}
+.mouse {
+    @media (min-width: #{$md3 + px}) {
+        width: 25px;
+        height: 40px;
+        border: 2px solid #333;
+        border-radius: 60px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            top: 7px;
+            left: calc(50% - 0.1px);
+            transform: translateX(-50%);
+            background-color: #333;
+            border-radius: 50%;
+            opacity: 1;
+            animation: wheel 1.3s infinite;
+            -webkit-animation: wheel 1.3s infinite;
+        }
+    }
+}
+@keyframes wheel {
+    0% {
+        top: 7px;
+    }
+    100% {
+        top: 26px;
+        opacity: 0;
     }
 }
