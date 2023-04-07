@@ -5,6 +5,7 @@ type NumberID = {
 export type TMenuList = NumberID & {
     title: string
     link: string
+    name: string
 }
 
 export type TSocialMediaList = NumberID & {
@@ -23,4 +24,14 @@ export type THero = {
 export type TSkillsList = NumberID & {
     title: string
     icon: string
+}
+
+export type TProjectsList = NumberID & {
+    title: string
+    icon: string
+    description: string
+    image: string
+    technologies: string[]
+    code: string
+    demo: string
 }

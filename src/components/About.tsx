@@ -74,7 +74,9 @@ export const About: FC<IAbout> = ({ skills }) => {
                                             perspiciatis inventore perferendis,{' '}
                                             <strong>nisi</strong> obcaecati
                                             facere a{' '}
-                                            <p className="p--link">porro</p>{' '}
+                                            <a href="#" className="p--link">
+                                                porro
+                                            </a>{' '}
                                             explicabo odit est, illum error
                                             harum velit?
                                         </p>

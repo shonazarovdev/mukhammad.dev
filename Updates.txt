@@ -3,3 +3,5 @@
 // Update 1.0.3 = Hero Section finish
 // Update 1.0.4 = About Section finish
 // Update 1.0.5 = Rename svg files
+// Update 1.0.5.1 = Rename Page Name
+// Update 1.0.6 = Projects Section finish
