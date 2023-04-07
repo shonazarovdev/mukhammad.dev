@@ -1,5 +1,8 @@
 .section {
     @include adaptiveValue('padding-block', 120, 64);
+    @media (max-width: #{$md3 + px}) {
+        padding-inline: 10px;
+    }
 }
 
 .section-gray {
@@ -36,7 +39,6 @@
 }
 
 .section-subtitle {
-    text-align: center;
     width: 75%;
     display: block;
     text-align: center;
@@ -46,6 +48,10 @@
     max-width: 80rem;
     margin: auto;
     line-height: 1.6;
+
+    @media (max-width: #{$md3 + px}) {
+        width: 90%;
+    }
 }
 
 [class*='--title'] {

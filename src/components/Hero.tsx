@@ -51,7 +51,7 @@ export const Hero: FC<IHero> = ({
                                 <a href="#projects">
                                     <button
                                         type="button"
-                                        className="btn btn-primary">
+                                        className="btn btn-primary btn-block">
                                         Projects
                                     </button>
                                 </a>

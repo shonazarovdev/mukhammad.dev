@@ -1,16 +1,19 @@
+import { scrollToSection } from '@/helpers/helpers';
 import useWindowSize from '@/hooks/useWindowSize';
 import clsx from 'clsx';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 interface IHeader {
     data: {
         id: number;
         title: string;
         link: string;
+        name: string;
     }[];
 }
 
 export const Header: FC<IHeader> = ({ data }) => {
+    const [activeSection, setActiveSection] = useState('');
     const [openMenu, setOpenMenu] = useState(false);
     const { width } = useWindowSize();
     const isLarge = width && width >= 1440;
@@ -22,6 +25,24 @@ export const Header: FC<IHeader> = ({ data }) => {
     const pageUp = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 0 && rect.bottom >= 0) {
+                    setActiveSection(section.id);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <div className="header">
@@ -40,14 +61,21 @@ export const Header: FC<IHeader> = ({ data }) => {
                                 <ul className="menu__list">
                                     {data.map((item) => (
                                         <li
-                                            className="menu__item"
+                                            className={clsx(
+                                                'menu__item',
+                                                activeSection === item.name
+                                                    ? 'active'
+                                                    : '',
+                                            )}
                                             key={item.id}
                                             onClick={() => setOpenMenu(false)}>
-                                            <a
-                                                href={item.link}
-                                                className="menu__link">
+                                            <p
+                                                className="menu__link"
+                                                onClick={() =>
+                                                    scrollToSection(item.name)
+                                                }>
                                                 {item.title}
-                                            </a>
+                                            </p>
                                         </li>
                                     ))}
                                 </ul>

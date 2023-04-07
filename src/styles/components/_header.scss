@@ -75,6 +75,13 @@
         margin: 0px 3px;
         padding: 5px 0px;
 
+        &.active {
+            .menu__link {
+                color: $thirdyColor;
+                text-decoration: underline;
+            }
+        }
+
         @media (max-width: #{$md3 + px}) {
             margin-bottom: 15px;
         }
@@ -84,6 +91,7 @@
         font-weight: 600;
         color: $mainColor;
         @include transition(0.3, ease, color);
+        cursor: pointer;
 
         @media (any-hover: hover) {
             &:hover {

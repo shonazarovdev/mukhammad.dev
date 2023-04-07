@@ -52,3 +52,11 @@ body {
 .social-icon {
     @include adaptiveValue('font-size', 24, 24);
 }
+
+@media (max-width: #{$md3 + px}) {
+    #about,
+    #projects,
+    #contact {
+        scroll-margin-top: 30px;
+    }
+}

@@ -1,9 +1,9 @@
-import { THero, TMenuList, TSkillsList, TSocialMediaList } from "./types";
+import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "./types";
 
 export const heroData: THero = {
     title: 'Front-End React Developer',
     titleIcon: '👋',
-    desc: "Hi, I'm Mukhammad Khamid. A passionate Front-end React Developer based in Khorezm, Uzbekistan.",
+    desc: "Hi, I'm Mukhammad Khamidovic. A passionate Front-end React Developer based in Khorezm, Uzbekistan.",
     descIcon: '📍'
 }
 
@@ -11,22 +11,26 @@ export const menuList: TMenuList[] = [
     {
         id: 1,
         title: "Home",
-        link: '#home'
+        link: '#home',
+        name: 'home'
     },
     {
         id: 2,
         title: 'About',
-        link: '#about'
+        link: '#about',
+        name: 'about'
     },
     {
         id: 3,
         title: 'Projects',
         link: '#projects',
+        name: 'projects'
     },
     {
         id: 4,
         title: 'Contact',
         link: '#contact',
+        name: 'contact'
     },
 
 ]
@@ -65,7 +69,7 @@ export const skillsList: TSkillsList[] = [
     },
     {
         id: 3,
-        title: 'Sass',
+        title: 'Scss',
         icon: 'SassSvg'
     },
     {
@@ -102,5 +106,18 @@ export const skillsList: TSkillsList[] = [
         id: 10,
         title: 'Styled Components',
         icon: 'StyledCompSvg'
+    }
+]
+
+export const projectsList: TProjectsList[] = [
+    {
+        id: 1,
+        title: 'MSS',
+        icon: '🧪',
+        description: 'OOO MUHANNAD SINOV SERVIS» обслуживает производителей и поставщиков строительной продукции и оказывает услуги по сертификации и испытаниям данных продукций.',
+        image: '/images/projects/pro_img_1.png',
+        technologies: ['Next.Js', 'SCSS'],
+        code: '',
+        demo: 'https://muhannad-next.vercel.app/'
     }
 ]
