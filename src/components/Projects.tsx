@@ -27,8 +27,8 @@ export const Projects: FC<IProjects> = ({ projects }) => {
                             </p>
                         </div>
                         <ul className="projects__main projects-list">
-                            {projects.map((item) => (
-                                <ProjectBox {...item} />
+                            {projects.map((item, key) => (
+                                <ProjectBox key={key} {...item} />
                             ))}
                         </ul>
                     </div>

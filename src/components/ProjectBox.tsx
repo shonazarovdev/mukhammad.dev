@@ -31,15 +31,19 @@ export const ProjectBox: FC<IProject> = ({
     useEffect(() => {
         const handleResize = () => {
             const images = document.querySelectorAll('.project-item__image');
+            const imageWrapper = document.querySelectorAll(
+                '.project-item__image-wrapper',
+            );
+            const wrapperHeight: number = imageWrapper[0].clientHeight;
             images.forEach((image) => {
-                const height = image.clientHeight;
+                const height = image.clientHeight - wrapperHeight;
                 setImageHeight(height);
             });
         };
         window.addEventListener('resize', handleResize);
         handleResize();
         return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    }, [scroll]);
 
     return (
         <li
@@ -57,7 +61,7 @@ export const ProjectBox: FC<IProject> = ({
                             className="project-item__image"
                             style={{
                                 transform: scroll
-                                    ? `translateY(-${imageHeight - 400}px)`
+                                    ? `translateY(-${imageHeight}px)`
                                     : 'translateY(0%)',
                                 transition: 'transform 10s ease-in-out',
                             }}
@@ -82,12 +86,13 @@ export const ProjectBox: FC<IProject> = ({
                 <ul className="decode-list">
                     <li className="decode-list__item">
                         <a href={code} className="decode-list__link">
-                            Code <BsGithub size={28} />
+                            Code <BsGithub className="decode-list__icon" />
                         </a>
                     </li>
                     <li className="decode-list__item">
                         <a href={demo} className="decode-list__link">
-                            Demo <RiShareBoxLine size={28} />
+                            Demo{' '}
+                            <RiShareBoxLine className="decode-list__icon" />
                         </a>
                     </li>
                 </ul>
