@@ -112,12 +112,22 @@ export const skillsList: TSkillsList[] = [
 export const projectsList: TProjectsList[] = [
     {
         id: 1,
-        title: 'MSS',
+        title: 'Something',
         icon: '🧪',
-        description: 'OOO MUHANNAD SINOV SERVIS» обслуживает производителей и поставщиков строительной продукции и оказывает услуги по сертификации и испытаниям данных продукций.',
-        image: '/images/projects/pro_img_1.png',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Porro aliquam consectetur sapiente ad dicta at maximed ignissimos sed, in nesciunt.',
+        image: '/images/projects/example_img.png',
         technologies: ['Next.Js', 'SCSS'],
         code: '',
-        demo: 'https://muhannad-next.vercel.app/'
-    }
+        demo: 'https://example.com/'
+    },
+    {
+        id: 2,
+        title: 'Something',
+        icon: '🚗',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Porro aliquam consectetur sapiente ad dicta at maxime dignissimos sed, in nesciunt.',
+        image: '/images/projects/example_img.png',
+        technologies: ['Next.Js', 'SCSS'],
+        code: '',
+        demo: 'https://example.com/'
+    },
 ]

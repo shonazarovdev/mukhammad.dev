@@ -53,10 +53,10 @@ body {
     @include adaptiveValue('font-size', 24, 24);
 }
 
-@media (max-width: #{$md3 + px}) {
+@media (max-width: #{$md2 + px}) {
     #about,
     #projects,
     #contact {
-        scroll-margin-top: 30px;
+        scroll-margin-top: 100px;
     }
 }

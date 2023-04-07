@@ -5,3 +5,4 @@
 // Update 1.0.5 = Rename svg files
 // Update 1.0.6 = Projects Section finish
 // Update 1.0.6.1 = Rewrite Update file
+// Update 1.0.6.2 = Projects Section Mobile Version

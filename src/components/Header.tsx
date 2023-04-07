@@ -1,7 +1,7 @@
+import React, { FC, useEffect, useState } from 'react';
 import { scrollToSection } from '@/helpers/helpers';
 import useWindowSize from '@/hooks/useWindowSize';
 import clsx from 'clsx';
-import React, { FC, useEffect, useState } from 'react';
 
 interface IHeader {
     data: {
@@ -13,7 +13,7 @@ interface IHeader {
 }
 
 export const Header: FC<IHeader> = ({ data }) => {
-    const [activeSection, setActiveSection] = useState('');
+    const [activeSection, setActiveSection] = useState('home');
     const [openMenu, setOpenMenu] = useState(false);
     const { width } = useWindowSize();
     const isLarge = width && width >= 1440;

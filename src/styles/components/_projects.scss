@@ -29,13 +29,22 @@
 .project-item {
     width: 92%;
     height: 430px;
+    @include adaptiveValue('height', 430, 280);
     flex-direction: row;
     padding: 1rem;
-    gap: 60px;
+    @include adaptiveValue('gap', 60, 25);
     margin-inline: auto;
+    @media (max-width: #{$md2 + px}) {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 12px;
+    }
     // .project-item-reversed
     &-reversed {
         flex-direction: row-reverse !important;
+        @media (max-width: #{$md2 + px}) {
+            flex-direction: column !important;
+        }
     }
     // .project-item__left
     &__left {
@@ -45,10 +54,14 @@
     &__right {
         flex: 0 0 35%;
         text-align: center;
+
+        @media (max-width: #{$md2 + px}) {
+            @include adaptiveValue('padding-bottom', 20, 0);
+        }
     }
     // .project-item__image-wrapper
     &__image-wrapper {
-        height: 400px;
+        @include adaptiveValue('height', 400, 250);
         border-radius: 17px;
         background-color: #76767633;
         overflow: hidden;
@@ -63,18 +76,18 @@
     // .project-item__title
     &__title {
         color: #2d2e32;
-        font-size: $fontSize;
-        margin-bottom: 20px;
         position: relative;
+        font-size: $fontSize;
         text-transform: uppercase;
+        @include adaptiveValue('margin-bottom', 20, 8);
     }
     // .project-item__description
     &__description {
         color: #767676;
-        font-size: 17px;
         font-weight: 500;
         text-align: center;
         text-transform: none;
+        @include adaptiveValue('font-size', $fontSize, 15);
     }
 
     // .project-item__techno
@@ -85,7 +98,7 @@
     width: 100%;
     @include flex();
     column-gap: 1rem;
-    margin-block: 1rem;
+    @include adaptiveValue('margin-block', 16, 12);
     // .techno-list__item
     &__item {
         padding: 10px 13px;
@@ -95,9 +108,9 @@
     }
 }
 .decode-list {
-    margin-top: 3.5rem;
+    @include adaptiveValue('margin-top', 48, 15);
     @include flex();
-    column-gap: 2.5rem;
+    @include adaptiveValue('column-gap', 40, 20);
     // .decode-list__item
     &__item {
     }
@@ -105,6 +118,10 @@
     &__link {
         @include flex();
         column-gap: 7px;
-        font-size: 20px;
+        @include adaptiveValue('font-size', 20, 16);
+    }
+    // .decode-list__icon
+    &__icon {
+        @include adaptiveValue('font-size', 28, 24);
     }
 }

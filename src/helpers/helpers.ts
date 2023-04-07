@@ -3,7 +3,7 @@ export function scrollToSection(sectionId: string): void {
 
     if (section) {
         window.scrollTo({
-            top: section.offsetTop,
+            top: section.offsetTop + 2,
             behavior: 'smooth'
         });
     }

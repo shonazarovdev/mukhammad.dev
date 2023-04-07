@@ -1,6 +1,7 @@
 .section {
     @include adaptiveValue('padding-block', 120, 64);
     @media (max-width: #{$md3 + px}) {
+        padding-top: $headerHeight + 10;
         padding-inline: 10px;
     }
 }
