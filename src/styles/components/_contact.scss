@@ -1,0 +1,104 @@
+.contact {
+    min-height: 100vh;
+    @include flex(strech);
+    background: linear-gradient(
+            to right,
+            rgba(245, 245, 245, 0.8),
+            rgba(245, 245, 245, 0.8)
+        ),
+        url('/images/hero-background.svg');
+    // .contact__wrapper
+    &__wrapper {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+    // .contact__container
+    &__container {
+    }
+    // .contact__body
+    &__body {
+        width: 100%;
+        height: 100%;
+        @include flex(center, center, column);
+    }
+    // .contact-form
+    &-form {
+        margin-top: 90px;
+        width: 70%;
+        height: 100%;
+        background-color: $bodyColor;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+        @include adaptiveValue('padding', 40, 20);
+
+        @media (max-width: #{$md3 + px}) {
+            width: 100%;
+        }
+    }
+}
+.form {
+    // .form-group
+    &-group {
+        @include flex(start, center, column);
+        @include adaptiveValue('margin-bottom', 40, 20);
+    }
+    // .form-button__wrapper
+    &-button__wrapper {
+        width: 100%;
+        @include adaptiveValue('column-gap', 20, 12);
+        @include flex(center, end);
+
+        button {
+            @include adaptiveValue('padding-block', 15, 10);
+            @include adaptiveValue('padding-inline', 50, 20);
+            @include adaptiveValue('font-size', 16, 14);
+        }
+    }
+}
+.form-group {
+    position: relative;
+    // .form-group__label
+    &__label {
+        color: #666;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: $fontSource;
+        margin-bottom: 16px;
+    }
+    // .form-group__input
+    &__input {
+        color: #333;
+        @include adaptiveValue('padding', 20, 15);
+        width: 100%;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: $fontMulish;
+
+        &::placeholder {
+            font-size: 14px;
+            font-weight: 800;
+            font-family: $fontMulish;
+        }
+
+        &.error {
+            border-color: #ff0000;
+        }
+    }
+    // .form-group__error
+    &__error {
+        position: absolute;
+        bottom: -25px;
+        font-size: 15px;
+        color: #ff0000;
+    }
+    // textarea
+    textarea {
+        resize: vertical;
+        min-height: 150px;
+        max-height: 300px;
+    }
+}

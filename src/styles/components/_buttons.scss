@@ -36,3 +36,14 @@
     background: #f1f1f1;
     color: #333;
 }
+
+.disabled {
+    background-color: #f1f1f1 !important;
+    border-color: #f1f1f1;
+
+    @media (any-hover: hover) {
+        &:hover {
+            transform: translateY(0) !important;
+        }
+    }
+}
