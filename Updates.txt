@@ -8,3 +8,4 @@
 // Update 1.0.6.2 = Projects Section Mobile Version
 // Update 1.0.7 = Contact Section finish and Contact Form Validation 
 // Update 1.0.8 = Contact Form API and Notifications
+// Update 1.0.9 = Meta Tag Website Name
