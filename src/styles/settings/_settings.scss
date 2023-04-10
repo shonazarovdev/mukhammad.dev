@@ -60,3 +60,19 @@ body {
         scroll-margin-top: 100px;
     }
 }
+
+.loading-icon {
+    animation-name: loading-spin;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
