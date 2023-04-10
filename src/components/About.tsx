@@ -10,6 +10,7 @@ import {
     StyledCompSvg,
     TypeScriptSvg,
 } from '@/assets/skills';
+import { scrollToSection } from '@/helpers/helpers';
 import clsx from 'clsx';
 import React, { FC } from 'react';
 
@@ -109,13 +110,12 @@ export const About: FC<IAbout> = ({ skills }) => {
                                         </p>
                                     </li>
                                 </ul>
-                                <a href="#contact">
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary">
-                                        Contact
-                                    </button>
-                                </a>
+                                <button
+                                    type="button"
+                                    className="btn btn-primary"
+                                    onClick={() => scrollToSection('contact')}>
+                                    Contact
+                                </button>
                             </div>
                             <div className="about-content__right">
                                 <h3 className="about-content--title">
