@@ -102,3 +102,7 @@
         max-height: 300px;
     }
 }
+.contact-form-button {
+    @include flex();
+    column-gap: 7px;
+}

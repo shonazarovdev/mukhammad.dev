@@ -1,11 +1,21 @@
 import React, { FC, useEffect, useState } from 'react';
 import { regexEmail } from '@/helpers/helpers';
 import clsx from 'clsx';
+import { CHAT_ID, URL_API } from '@/helpers/http';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import { VscLoading } from 'react-icons/vsc';
 
 interface FormState {
     name?: string;
     email?: string;
     message?: string;
+}
+
+interface FormRequest {
+    chat_id: string;
+    parse_mode: string;
+    text: string;
 }
 
 export const Contact: FC = () => {
@@ -20,6 +30,9 @@ export const Contact: FC = () => {
         email: '',
         message: '',
     });
+    const [loading, setLoading] = useState<boolean>(false);
+    const [notifyMessage, setNotifyMessage] = useState<string>('Success!');
+
     useEffect(() => {
         // Custom validation logic on formState change
         const validationErrors: FormState = {};
@@ -28,10 +41,7 @@ export const Contact: FC = () => {
             validationErrors.name = 'Name must be less than 50 characters';
         }
 
-        if (
-            formState.email &&
-            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)
-        ) {
+        if (formState.email && !regexEmail(formState.email)) {
             validationErrors.email = 'Invalid email address';
         }
 
@@ -62,12 +72,43 @@ export const Contact: FC = () => {
         setErrors({ ...errors, ...validationErrors });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        const { name, email, message } = formState;
 
         // Form submission logic
-        console.log('Form submitted:', formState);
-        setFormState({ name: '', email: '', message: '' });
+        const send = `<b>Имя:</b> ${name}\n<b>Электронная почта:</b> ${email}\n<b>Сообщение:</b> ${message}\n`;
+        setLoading(true);
+        try {
+            await axios.post(URL_API, {
+                chat_id: CHAT_ID,
+                parse_mode: 'html',
+                text: send,
+            });
+            toast.success(notifyMessage, {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            });
+            setFormState({ name: '', email: '', message: '' });
+        } catch (error: any) {
+            toast.error(error.message, {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            });
+        }
+        setLoading(false);
     };
 
     const handleReset = () => {
@@ -82,6 +123,18 @@ export const Contact: FC = () => {
         <section id="contact" className="section contact">
             <div className="contact__wrapper contact__container">
                 <div className="contact__body">
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                    />
                     <div className="section-header">
                         <h2 className="section-title">Contact</h2>
                         <p className="section-subtitle">
@@ -175,7 +228,8 @@ export const Contact: FC = () => {
                             {!hasErrors &&
                             formState.name?.length !== 0 &&
                             formState.email?.length !== 0 &&
-                            formState.message?.length !== 0 ? (
+                            formState.message?.length !== 0 &&
+                            !loading ? (
                                 <button
                                     type="submit"
                                     className="btn btn-primary">
@@ -184,7 +238,10 @@ export const Contact: FC = () => {
                             ) : (
                                 <button
                                     disabled={true}
-                                    className="btn btn-ghost disabled">
+                                    className="btn btn-ghost disabled contact-form-button">
+                                    {loading && (
+                                        <VscLoading className="loading-icon" />
+                                    )}
                                     Submit
                                 </button>
                             )}
