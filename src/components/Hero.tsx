@@ -1,3 +1,4 @@
+import { scrollToSection } from '@/helpers/helpers';
 import clsx from 'clsx';
 import React, { FC } from 'react';
 import { BsGithub, BsLinkedin, BsTelegram } from 'react-icons/bs';
@@ -48,13 +49,12 @@ export const Hero: FC<IHero> = ({
                                 {descIcon}
                             </p>
                             <div className="hero__button">
-                                <a href="#projects">
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary btn-block">
-                                        Projects
-                                    </button>
-                                </a>
+                                <button
+                                    type="button"
+                                    className="btn btn-primary btn-block"
+                                    onClick={() => scrollToSection('projects')}>
+                                    Projects
+                                </button>
                             </div>
                         </div>
                         <ul className="hero__stacks stack-list">

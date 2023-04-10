@@ -10,3 +10,4 @@
 // Update 1.0.8 = Contact Form API and Notifications
 // Update 1.0.9 = Meta Tag Website Name
 // Update 1.0.9.1 = Meta Tag Renaming
+// Update 1.0.9.2 = Changing Buttons Link
