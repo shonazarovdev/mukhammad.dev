@@ -49,10 +49,10 @@ export const Header: FC<IHeader> = ({ data }) => {
             <div className="header__wrapper">
                 <div className={clsx('header__body', isLarge && 'container')}>
                     <div className="header__main">
-                        <h3 className="header__logo" onClick={pageUp}>
+                        <h3 className="header__logo fadeIn" onClick={pageUp}>
                             Mukhammad.dev
                         </h3>
-                        <div className="header__menu menu">
+                        <div className="header__menu menu fadeIn">
                             <nav
                                 className={clsx(
                                     'menu__body',

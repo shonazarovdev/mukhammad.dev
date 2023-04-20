@@ -40,18 +40,18 @@ export const Hero: FC<IHero> = ({
                 <div className="hero__container">
                     <div className="hero__body">
                         <div className="hero__main">
-                            <h1 className="title">
+                            <h1 className="title fadeIn">
                                 {title}
                                 <span className="waving-icon">{titleIcon}</span>
                             </h1>
-                            <p className="subtitle">
+                            <p className="subtitle fadeIn">
                                 {desc}
                                 {descIcon}
                             </p>
                             <div className="hero__button">
                                 <button
                                     type="button"
-                                    className="btn btn-primary btn-block"
+                                    className="btn btn-primary btn-block fadeIn"
                                     onClick={() => scrollToSection('projects')}>
                                     Projects
                                 </button>
@@ -73,7 +73,7 @@ export const Hero: FC<IHero> = ({
                                 </li>
                             ))}
                         </ul>
-                        <div className="mouse__wrapper">
+                        <div className="mouse__wrapper fadeIn">
                             <div className="mouse"></div>
                         </div>
                     </div>
