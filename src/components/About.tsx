@@ -68,45 +68,27 @@ export const About: FC<IAbout> = ({ skills }) => {
                                 <ul className="about-content__list">
                                     <li className="about-content__item">
                                         <p className="about-content--text">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit.
-                                            <strong>Laboriosam</strong> dolores
-                                            magnam, nobis cum voluptatem eius
-                                            perspiciatis inventore perferendis,{' '}
-                                            <strong>nisi</strong> obcaecati
-                                            facere a{' '}
-                                            <a href="#" className="p--link">
-                                                porro
-                                            </a>{' '}
-                                            explicabo odit est, illum error
-                                            harum velit?
-                                        </p>
-                                    </li>
-                                    <li className="about-content__item">
-                                        <p className="about-content--text">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit.
-                                            <strong>Nemo</strong> error aliquid
-                                            maxime rem repellat? Exercitationem
-                                            voluptate facere fugiat, voluptas{' '}
-                                            <strong>consequatur</strong> tenetur
-                                            tempore. Distinctio at molestias
-                                            animi labore? Explicabo, quae
-                                            laborum?
-                                        </p>
-                                    </li>
-                                    <li className="about-content__item">
-                                        <p className="about-content--text">
-                                            Lorem ipsum dolor sit, amet
-                                            consectetur adipisicing elit.
-                                            Praesentium{' '}
-                                            <strong>nesciunt</strong> doloremque
-                                            optio, incidunt maxime natus.
-                                            Cupiditate voluptatibus adipisci id
-                                            velit ad,{' '}
-                                            <strong>reprehenderit</strong> omnis
-                                            maxime tenetur quo voluptates unde
-                                            repellat assumenda.
+                                            As a{' '}
+                                            <strong>
+                                                Junior Front-End Developer
+                                            </strong>
+                                            , I excel in designing and
+                                            maintaining responsive websites that
+                                            offer a smooth user experience. My
+                                            expertise lies in crafting dynamic,
+                                            engaging interfaces through writing
+                                            <strong> clean</strong> and{' '}
+                                            <strong>optimized </strong>
+                                            code and utilizing cutting-edge{' '}
+                                            <strong>
+                                                development tools
+                                            </strong>{' '}
+                                            and <strong>techniques</strong>. I
+                                            am also a{' '}
+                                            <strong>team player</strong> who
+                                            thrives in collaborating with
+                                            cross-functional teams to produce
+                                            outstanding web applications
                                         </p>
                                     </li>
                                 </ul>
