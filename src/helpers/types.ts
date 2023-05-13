@@ -31,6 +31,7 @@ export type TProjectsList = NumberID & {
     icon: string
     description: string
     image: string
+    scrollY: number
     technologies: string[]
     code: string
     demo: string

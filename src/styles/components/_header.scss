@@ -119,11 +119,8 @@
         height: 20px;
         cursor: pointer;
         z-index: 5;
-        // background-color: #00ff99;
         span {
             @include transition();
-            top: calc(50% - 1px);
-            right: 0;
             position: absolute;
             width: calc(100% - 4px);
             height: 3px;
@@ -131,11 +128,17 @@
             background-color: $blackColor;
             &:first-child {
                 top: 0px;
-                left: 0px;
+                left: -1px;
+                bottom: auto;
+            }
+            &:nth-child(2) {
+                top: 50%;
+                right: 0;
+                transform: translateY(-40%);
             }
             &:last-child {
                 top: auto;
-                left: 1px;
+                left: 2px;
                 bottom: -1px;
             }
         }
@@ -145,12 +148,13 @@
                 &:first-child {
                     width: 100%;
                     transform: rotate(-45deg);
-                    top: calc(50% - 1px);
+                    top: calc(50% - 3px);
+                    left: 1px;
                 }
                 &:last-child {
                     width: 100%;
                     transform: rotate(45deg);
-                    bottom: calc(50% - 2px);
+                    bottom: calc(50% - (0px));
                 }
             }
         }

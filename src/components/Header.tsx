@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState } from 'react';
-import { scrollToSection } from '@/helpers/helpers';
-import useWindowSize from '@/hooks/useWindowSize';
-import clsx from 'clsx';
+import { FC, useEffect, useState } from "react";
+import clsx from "clsx";
+import { scrollToSection } from "@/helpers/helpers";
+import useWindowSize from "@/hooks/useWindowSize";
 
 interface IHeader {
     data: {
@@ -13,22 +13,29 @@ interface IHeader {
 }
 
 export const Header: FC<IHeader> = ({ data }) => {
-    const [activeSection, setActiveSection] = useState('home');
+    const [activeSection, setActiveSection] = useState("home");
     const [openMenu, setOpenMenu] = useState(false);
     const { width } = useWindowSize();
     const isLarge = width && width >= 1440;
 
     const handleOpenMenu = () => {
         setOpenMenu(!openMenu);
+        if (openMenu) {
+            window.document.body.style.removeProperty("overflow");
+            window.document.body.style.removeProperty("height");
+        } else {
+            window.document.body.style.overflow = "hidden";
+            window.document.body.style.height = "100vh";
+        }
     };
 
     const pageUp = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll("section");
             sections.forEach((section) => {
                 const rect = section.getBoundingClientRect();
                 if (rect.top <= 0 && rect.bottom >= 0) {
@@ -37,17 +44,17 @@ export const Header: FC<IHeader> = ({ data }) => {
             });
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
     return (
         <div className="header">
             <div className="header__wrapper">
-                <div className={clsx('header__body', isLarge && 'container')}>
+                <div className={clsx("header__body", isLarge && "container")}>
                     <div className="header__main">
                         <h3 className="header__logo fadeIn" onClick={pageUp}>
                             Mukhammad.dev
@@ -55,25 +62,28 @@ export const Header: FC<IHeader> = ({ data }) => {
                         <div className="header__menu menu fadeIn">
                             <nav
                                 className={clsx(
-                                    'menu__body',
-                                    openMenu && '_active',
-                                )}>
+                                    "menu__body",
+                                    openMenu && "_active"
+                                )}
+                            >
                                 <ul className="menu__list">
                                     {data.map((item) => (
                                         <li
                                             className={clsx(
-                                                'menu__item',
+                                                "menu__item",
                                                 activeSection === item.name
-                                                    ? 'active'
-                                                    : '',
+                                                    ? "active"
+                                                    : ""
                                             )}
                                             key={item.id}
-                                            onClick={() => setOpenMenu(false)}>
+                                            onClick={() => setOpenMenu(false)}
+                                        >
                                             <p
                                                 className="menu__link"
                                                 onClick={() =>
                                                     scrollToSection(item.name)
-                                                }>
+                                                }
+                                            >
                                                 {item.title}
                                             </p>
                                         </li>
@@ -84,10 +94,11 @@ export const Header: FC<IHeader> = ({ data }) => {
                         <button
                             type="button"
                             className={clsx(
-                                'menu__icon icon-menu',
-                                openMenu && '_active',
+                                "menu__icon icon-menu",
+                                openMenu && "_active"
                             )}
-                            onClick={handleOpenMenu}>
+                            onClick={handleOpenMenu}
+                        >
                             {[1, 2, 3].map((_, key) => (
                                 <span key={key}></span>
                             ))}

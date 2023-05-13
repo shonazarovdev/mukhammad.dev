@@ -1,10 +1,12 @@
-import React, { FC, useEffect, useState } from 'react';
-import { regexEmail } from '@/helpers/helpers';
-import clsx from 'clsx';
-import { CHAT_ID, URL_API } from '@/helpers/http';
-import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
-import { VscLoading } from 'react-icons/vsc';
+import React, { FC, useEffect, useState } from "react";
+import { VscLoading } from "react-icons/vsc";
+import { toast, ToastContainer } from "react-toastify";
+import clsx from "clsx";
+import { motion } from "framer-motion";
+import axios from "axios";
+import { regexEmail } from "@/helpers/helpers";
+import { CHAT_ID, URL_API } from "@/helpers/http";
+import * as A from "@helpers/animations";
 
 interface FormState {
     name?: string;
@@ -12,55 +14,49 @@ interface FormState {
     message?: string;
 }
 
-interface FormRequest {
-    chat_id: string;
-    parse_mode: string;
-    text: string;
-}
-
 export const Contact: FC = () => {
     const [formState, setFormState] = useState<FormState>({
-        name: '',
-        email: '',
-        message: '',
+        name: "",
+        email: "",
+        message: "",
     });
 
     const [errors, setErrors] = useState<FormState>({
-        name: '',
-        email: '',
-        message: '',
+        name: "",
+        email: "",
+        message: "",
     });
     const [loading, setLoading] = useState<boolean>(false);
-    const [notifyMessage, setNotifyMessage] = useState<string>('Success!');
+    const notifyMessage = "Success!";
 
     useEffect(() => {
         // Custom validation logic on formState change
         const validationErrors: FormState = {};
 
         if (formState.name && formState.name.length > 50) {
-            validationErrors.name = 'Name must be less than 50 characters';
+            validationErrors.name = "Name must be less than 50 characters";
         }
 
         if (formState.email && !regexEmail(formState.email)) {
-            validationErrors.email = 'Invalid email address';
+            validationErrors.email = "Invalid email address";
         }
 
         if (formState.message && !formState.message.trim()) {
-            validationErrors.message = 'Message is required';
+            validationErrors.message = "Message is required";
         }
 
         setErrors(validationErrors);
     }, [formState.name, formState.email, formState.message]);
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
         setFormState({ ...formState, [name]: value });
     };
 
     const handleBlur = (
-        e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+        e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name } = e.target;
         const validationErrors: FormState = {};
@@ -82,45 +78,51 @@ export const Contact: FC = () => {
         try {
             await axios.post(URL_API, {
                 chat_id: CHAT_ID,
-                parse_mode: 'html',
+                parse_mode: "html",
                 text: send,
             });
             toast.success(notifyMessage, {
-                position: 'top-right',
+                position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: 'light',
+                theme: "light",
             });
-            setFormState({ name: '', email: '', message: '' });
+            setFormState({ name: "", email: "", message: "" });
         } catch (error: any) {
             toast.error(error.message, {
-                position: 'top-right',
+                position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: 'light',
+                theme: "light",
             });
         }
         setLoading(false);
     };
 
     const handleReset = () => {
-        setFormState({ name: '', email: '', message: '' });
-        setErrors({ name: '', email: '', message: '' });
+        setFormState({ name: "", email: "", message: "" });
+        setErrors({ name: "", email: "", message: "" });
     };
 
     // Check if form has any errors
     const hasErrors = !!Object.values(errors).find((error) => !!error);
 
     return (
-        <section id="contact" className="section contact">
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2, once: true }}
+            id="contact"
+            className="section contact"
+        >
             <div className="contact__wrapper contact__container">
                 <div className="contact__body">
                     <ToastContainer
@@ -136,13 +138,28 @@ export const Contact: FC = () => {
                         theme="light"
                     />
                     <div className="section-header">
-                        <h2 className="section-title">Contact</h2>
-                        <p className="section-subtitle">
+                        <motion.h2
+                            custom={1}
+                            variants={A.section_title}
+                            className="section-title"
+                        >
+                            Contact
+                        </motion.h2>
+                        <motion.p
+                            custom={2}
+                            variants={A.section_title}
+                            className="section-subtitle"
+                        >
                             Feel free to Contact me by submitting the form below
                             and I will get back to you as soon as possible
-                        </p>
+                        </motion.p>
                     </div>
-                    <form className="contact-form form" onSubmit={handleSubmit}>
+                    <motion.form
+                        custom={3}
+                        variants={A.section_title}
+                        className="contact-form form"
+                        onSubmit={handleSubmit}
+                    >
                         <div className="form-group">
                             <label htmlFor="name" className="form-group__label">
                                 Name
@@ -153,8 +170,8 @@ export const Contact: FC = () => {
                                 name="name"
                                 placeholder="Enter Your Name"
                                 className={clsx(
-                                    'form-group__input',
-                                    errors.name && 'error',
+                                    "form-group__input",
+                                    errors.name && "error"
                                 )}
                                 id="name"
                                 value={formState.name}
@@ -170,7 +187,8 @@ export const Contact: FC = () => {
                         <div className="form-group">
                             <label
                                 htmlFor="email"
-                                className="form-group__label">
+                                className="form-group__label"
+                            >
                                 Email
                             </label>
                             <input
@@ -180,8 +198,8 @@ export const Contact: FC = () => {
                                 placeholder="Enter Your Email"
                                 id="email"
                                 className={clsx(
-                                    'form-group__input',
-                                    errors.email && 'error',
+                                    "form-group__input",
+                                    errors.email && "error"
                                 )}
                                 value={formState.email}
                                 onBlur={handleBlur}
@@ -196,7 +214,8 @@ export const Contact: FC = () => {
                         <div className="form-group">
                             <label
                                 htmlFor="message"
-                                className="form-group__label">
+                                className="form-group__label"
+                            >
                                 Message
                             </label>
                             <textarea
@@ -205,8 +224,8 @@ export const Contact: FC = () => {
                                 name="message"
                                 placeholder="Enter Your Message"
                                 className={clsx(
-                                    'form-group__input',
-                                    errors.message && 'error',
+                                    "form-group__input",
+                                    errors.message && "error"
                                 )}
                                 value={formState.message}
                                 onBlur={handleBlur}
@@ -222,7 +241,8 @@ export const Contact: FC = () => {
                             <button
                                 type="reset"
                                 className="btn btn-ghost"
-                                onClick={handleReset}>
+                                onClick={handleReset}
+                            >
                                 Reset
                             </button>
                             {!hasErrors &&
@@ -232,13 +252,15 @@ export const Contact: FC = () => {
                             !loading ? (
                                 <button
                                     type="submit"
-                                    className="btn btn-primary">
+                                    className="btn btn-primary"
+                                >
                                     Submit
                                 </button>
                             ) : (
                                 <button
                                     disabled={true}
-                                    className="btn btn-ghost disabled contact-form-button">
+                                    className="btn btn-ghost disabled contact-form-button"
+                                >
                                     {loading && (
                                         <VscLoading className="loading-icon" />
                                     )}
@@ -246,9 +268,9 @@ export const Contact: FC = () => {
                                 </button>
                             )}
                         </div>
-                    </form>
+                    </motion.form>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };

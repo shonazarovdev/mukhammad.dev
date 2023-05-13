@@ -1,7 +1,9 @@
-import { scrollToSection } from '@/helpers/helpers';
-import clsx from 'clsx';
-import React, { FC } from 'react';
-import { BsGithub, BsLinkedin, BsTelegram } from 'react-icons/bs';
+import { FC } from "react";
+import { BsGithub, BsLinkedin, BsTelegram } from "react-icons/bs";
+import { motion } from "framer-motion";
+import clsx from "clsx";
+import { scrollToSection } from "@/helpers/helpers";
+import * as A from "@helpers/animations";
 
 interface IHero {
     social: {
@@ -34,30 +36,56 @@ export const Hero: FC<IHero> = ({
         BsLinkedin: <BsLinkedin className="social-icon" />,
     };
 
+    const clickMouse = () => {
+        scrollToSection("about");
+    };
+
     return (
-        <section id="home" className="hero">
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2, once: true }}
+            id="home"
+            className="hero"
+        >
             <div className="hero__wrapper">
                 <div className="hero__container">
                     <div className="hero__body">
                         <div className="hero__main">
-                            <h1 className="title fadeIn">
+                            <motion.h1
+                                custom={1}
+                                variants={A.hero_text}
+                                className="title"
+                            >
                                 {title}
                                 <span className="waving-icon">{titleIcon}</span>
-                            </h1>
-                            <p className="subtitle fadeIn">
+                            </motion.h1>
+                            <motion.p
+                                custom={2}
+                                variants={A.hero_text}
+                                className="subtitle"
+                            >
                                 {desc}
                                 {descIcon}
-                            </p>
-                            <div className="hero__button">
+                            </motion.p>
+                            <motion.div
+                                custom={3}
+                                variants={A.hero_text}
+                                className="hero__button"
+                            >
                                 <button
                                     type="button"
-                                    className="btn btn-primary btn-block fadeIn"
-                                    onClick={() => scrollToSection('projects')}>
+                                    className="btn btn-primary btn-block"
+                                    onClick={() => scrollToSection("projects")}
+                                >
                                     Projects
                                 </button>
-                            </div>
+                            </motion.div>
                         </div>
-                        <ul className="hero__stacks stack-list">
+                        <motion.ul
+                            variants={A.hero_social}
+                            className="hero__stacks stack-list"
+                        >
                             {social.map((item) => (
                                 <li key={item.id} className="stack-list__item">
                                     <a
@@ -65,20 +93,27 @@ export const Hero: FC<IHero> = ({
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={clsx(
-                                            'stack-list__link',
-                                            item.name,
-                                        )}>
+                                            "stack-list__link",
+                                            item.name
+                                        )}
+                                    >
                                         {icons[item.title as keyof TIcons]}
                                     </a>
                                 </li>
                             ))}
-                        </ul>
-                        <div className="mouse__wrapper fadeIn">
+                        </motion.ul>
+                        <motion.div
+                            custom={4}
+                            variants={A.hero_text}
+                            className="mouse__wrapper"
+                            onClick={clickMouse}
+                        >
                             <div className="mouse"></div>
-                        </div>
+                            Click me!
+                        </motion.div>
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };

@@ -2,7 +2,7 @@ import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "
 
 export const heroData: THero = {
     title: 'Front-End React Developer',
-    titleIcon: '👋',
+    titleIcon: '',
     desc: "Hi, I'm Mukhammad Khamidovic. A passionate Front-end React Developer based in Khorezm, Uzbekistan.",
     descIcon: '📍'
 }
@@ -112,22 +112,24 @@ export const skillsList: TSkillsList[] = [
 export const projectsList: TProjectsList[] = [
     {
         id: 1,
-        title: 'Something',
+        title: 'Muhannad Service',
         icon: '🧪',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Porro aliquam consectetur sapiente ad dicta at maximed ignissimos sed, in nesciunt.',
-        image: '/images/projects/example_img.png',
+        description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
+        image: '/images/projects/pro_1.jpeg',
+        scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
-        code: '',
-        demo: 'https://example.com/'
+        code: 'https://github.com/MukhammadDev9/muhannad-next',
+        demo: 'https://muhannad-next.vercel.app/'
     },
     {
         id: 2,
-        title: 'Something',
-        icon: '🚗',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Porro aliquam consectetur sapiente ad dicta at maxime dignissimos sed, in nesciunt.',
-        image: '/images/projects/example_img.png',
-        technologies: ['Next.Js', 'SCSS'],
+        title: 'Portfolio',
+        icon: '🌌',
+        description: 'A portfolio website of UI/UX Designer Javlon. There are a lot of beautiful websites designed by Javlon.',
+        image: '/images/projects/pro_2.jpeg',
+        scrollY: 2979,
+        technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
         code: '',
-        demo: 'https://example.com/'
+        demo: 'https://javlon-vite.vercel.app/'
     },
 ]
