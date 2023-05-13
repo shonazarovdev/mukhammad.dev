@@ -1,5 +1,7 @@
-import React, { FC } from 'react';
-import { ProjectBox } from './ProjectBox';
+import { FC } from "react";
+import { motion } from "framer-motion";
+import * as A from "@helpers/animations";
+import { MProjectBox } from "./ProjectBox";
 
 interface IProjects {
     projects: {
@@ -8,6 +10,7 @@ interface IProjects {
         icon: string;
         description: string;
         image: string;
+        scrollY: number;
         technologies: string[];
         code: string;
         demo: string;
@@ -16,24 +19,53 @@ interface IProjects {
 
 export const Projects: FC<IProjects> = ({ projects }) => {
     return (
-        <section id="projects" className="section projects">
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2, once: true }}
+            id="projects"
+            className="section projects"
+        >
             <div className="projects__wrapper">
                 <div className="projects__container">
                     <div className="projects__body">
-                        <div className="section-header">
-                            <h2 className="section-title">Projects</h2>
-                            <p className="section-subtitle">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ amount: 0.2, once: true }}
+                            className="section-header"
+                        >
+                            <motion.h2
+                                custom={1}
+                                variants={A.section_title}
+                                className="section-title"
+                            >
+                                Projects
+                            </motion.h2>
+                            <motion.p
+                                custom={2}
+                                variants={A.section_title}
+                                className="section-subtitle"
+                            >
                                 Each project is a unique piece of development 🧩
-                            </p>
-                        </div>
+                            </motion.p>
+                        </motion.div>
                         <ul className="projects__main projects-list">
                             {projects.map((item, key) => (
-                                <ProjectBox key={key} {...item} />
+                                <MProjectBox
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ amount: 0.2, once: true }}
+                                    custom={item.id}
+                                    variants={A.projects_list}
+                                    key={key}
+                                    {...item}
+                                />
                             ))}
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };

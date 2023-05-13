@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
-import { About, Contact, Hero, Projects } from '@components/index';
+import React, { FC } from "react";
 import {
     heroData,
     projectsList,
     skillsList,
     socialMediaList,
-} from '@/helpers/data';
+} from "@/helpers/data";
+import { About, Contact, Hero, Projects } from "@components/index";
 
 export const Main: FC = () => {
     return (

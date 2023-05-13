@@ -1,5 +1,5 @@
-import { Main } from '@components/index';
-import { Page } from './layout';
+import { Main } from "@components/index";
+import { Page } from "./layout";
 
 function App() {
     return (

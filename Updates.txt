@@ -14,3 +14,7 @@
 // Update 1.0.9.3 = Add Some Animation
 // Update 1.0.9.4 = Rewrite content
 // Update 1.0.9.5 = Set Meta Tags
+// Update 1.1.0 = New Changes:
+//    * Add Projects Pictures
+//    * Project Box Bug Fixed
+//    * New Animations

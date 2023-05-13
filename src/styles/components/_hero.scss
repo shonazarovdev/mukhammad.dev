@@ -10,7 +10,7 @@
                 rgba(245, 245, 245, 0.8),
                 rgba(245, 245, 245, 0.8)
             ),
-            url('/images/hero-background.svg');
+            url("/images/hero-background.svg");
     }
     // .hero__container
     &__container {
@@ -31,32 +31,32 @@
         left: 0;
         @media (min-width: #{$md4 + px}) {
             bottom: 50%;
-            @include adaptiveValue('bottom', 350, 50);
+            @include adaptiveValue("bottom", 350, 50);
             transform: translateY(50%);
         }
         @media (max-width: #{$md4 + px}) {
             border-radius: 5px 5px 5px 5px;
             @include flex();
             bottom: 0;
-            @include adaptiveValue('left', 80, 30);
+            @include adaptiveValue("left", 80, 30);
         }
     }
     // .hero__button
     &__button {
         width: 100%;
         @include flex();
-        @include adaptiveValue('margin-top', 80, 30);
+        @include adaptiveValue("margin-top", 80, 30);
     }
 }
 .title {
-    @include adaptiveValue('font-size', 65, 38);
-    @include adaptiveValue('line-height', 69, 44);
+    @include adaptiveValue("font-size", 65, 38);
+    @include adaptiveValue("line-height", 69, 44);
     color: $mainColor;
     text-align: center;
-    @include adaptiveValue('margin-bottom', 40, 17);
+    @include adaptiveValue("margin-bottom", 40, 17);
 }
 .subtitle {
-    @include adaptiveValue('font-size', 20, 16);
+    @include adaptiveValue("font-size", 20, 16);
     width: 85%;
     color: $secondaryColor;
     text-align: center;
@@ -128,9 +128,15 @@
     }
 }
 .mouse__wrapper {
+    display: none;
+
     @media (min-width: #{$md3 + px}) {
+        display: block;
         position: absolute;
-        bottom: 25px;
+        bottom: 20px;
+        cursor: pointer;
+        @include flex(center, center, column);
+        row-gap: 0.5rem;
     }
 }
 .mouse {
@@ -143,7 +149,7 @@
         overflow: hidden;
 
         &::before {
-            content: '';
+            content: "";
             width: 5px;
             height: 5px;
             position: absolute;

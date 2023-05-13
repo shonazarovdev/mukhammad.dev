@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useState } from 'react';
-import { GithubSvg } from '@/assets/skills';
-import clsx from 'clsx';
-import { RiShareBoxLine } from 'react-icons/ri';
-import { BsGithub } from 'react-icons/bs';
+import { FC, useEffect, useState, forwardRef } from "react";
+import { BsGithub } from "react-icons/bs";
+import { RiShareBoxLine } from "react-icons/ri";
+import clsx from "clsx";
+import { motion } from "framer-motion";
+import * as A from "@helpers/animations";
 
 interface IProject {
     id: number;
@@ -15,88 +16,106 @@ interface IProject {
     demo: string;
 }
 
-export const ProjectBox: FC<IProject> = ({
-    id,
-    title,
-    icon,
-    description,
-    image,
-    technologies,
-    code,
-    demo,
-}) => {
-    const [scroll, setScroll] = useState(false);
-    const [imageHeight, setImageHeight] = useState(0);
+export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
+    (
+        { id, title, icon, description, image, technologies, code, demo },
+        ref
+    ) => {
+        const [scroll, setScroll] = useState<boolean>(false);
+        const [imageHeight, setImageHeight] = useState<number>(0);
 
-    useEffect(() => {
-        const handleResize = () => {
-            const images = document.querySelectorAll('.project-item__image');
-            const imageWrapper = document.querySelectorAll(
-                '.project-item__image-wrapper',
-            );
-            const wrapperHeight: number = imageWrapper[0].clientHeight;
-            images.forEach((image) => {
-                const height = image.clientHeight - wrapperHeight;
-                setImageHeight(height);
-            });
-        };
-        window.addEventListener('resize', handleResize);
-        handleResize();
-        return () => window.removeEventListener('resize', handleResize);
-    }, [scroll]);
+        useEffect(() => {
+            const handleResize = () => {
+                const imageWrappers = document.querySelectorAll(
+                    ".project-item__image-wrapper"
+                );
 
-    return (
-        <li
-            key={id}
-            className={clsx(
-                'projects-list__item project-item',
-                id % 2 === 0 && 'project-item-reversed',
-            )}>
-            <a href={demo} target="_blank" rel="noreferrer">
-                <div className="project-item__left">
-                    <div className="project-item__image-wrapper">
-                        <img
-                            src={image}
-                            alt="project-image"
-                            className="project-item__image"
-                            style={{
-                                transform: scroll
-                                    ? `translateY(-${imageHeight}px)`
-                                    : 'translateY(0%)',
-                                transition: 'transform 10s ease-in-out',
-                            }}
-                            onMouseEnter={() => setScroll(true)}
-                            onMouseLeave={() => setScroll(false)}
-                        />
+                const images = document.querySelectorAll(
+                    ".project-item__image"
+                );
+
+                imageWrappers.forEach((wrapper) => {
+                    const height =
+                        ((images[id - 1].clientHeight - wrapper.clientHeight) *
+                            100) /
+                        images[id - 1].clientHeight;
+
+                    setImageHeight(height);
+                });
+            };
+            handleResize();
+        }, [scroll]);
+
+        return (
+            <li
+                key={id}
+                className={clsx(
+                    "projects-list__item project-item",
+                    id % 2 === 0 && "project-item-reversed"
+                )}
+                ref={ref}
+            >
+                <motion.a
+                    custom={id}
+                    variants={A.projects_list}
+                    href={demo}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <div className="project-item__left">
+                        <div className="project-item__image-wrapper">
+                            <img
+                                src={image}
+                                alt="project-image"
+                                className="project-item__image"
+                                style={{
+                                    transform: scroll
+                                        ? `translateY(-${imageHeight}%)`
+                                        : "translateY(0%)",
+                                    transition: "transform 10s ease-in-out",
+                                }}
+                                onMouseEnter={() => setScroll(true)}
+                                onMouseLeave={() => setScroll(false)}
+                            />
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div className="project-item__right">
-                <h3 className="project-item__title">
-                    {title} {icon}
-                </h3>
-                <p className="project-item__description">{description}</p>
-                <ul className="project-item__techno techno-list">
-                    {technologies.map((item, key) => (
-                        <li key={key} className="techno-list__item">
-                            <p>{item}</p>
+                </motion.a>
+                <motion.div
+                    custom={id}
+                    variants={A.projects_list}
+                    className="project-item__right"
+                >
+                    <h3 className="project-item__title">
+                        {title} {icon}
+                    </h3>
+                    <p className="project-item__description">{description}</p>
+                    <ul className="project-item__techno techno-list">
+                        {technologies.map((item, key) => (
+                            <li key={key} className="techno-list__item">
+                                <p>{item}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <ul className="decode-list">
+                        {code.length !== 0 && (
+                            <li className="decode-list__item">
+                                <a href={code} className="decode-list__link">
+                                    Code{" "}
+                                    <BsGithub className="decode-list__icon" />
+                                </a>
+                            </li>
+                        )}
+                        <li className="decode-list__item">
+                            <a href={demo} className="decode-list__link">
+                                Demo{" "}
+                                <RiShareBoxLine className="decode-list__icon" />
+                            </a>
                         </li>
-                    ))}
-                </ul>
-                <ul className="decode-list">
-                    <li className="decode-list__item">
-                        <a href={code} className="decode-list__link">
-                            Code <BsGithub className="decode-list__icon" />
-                        </a>
-                    </li>
-                    <li className="decode-list__item">
-                        <a href={demo} className="decode-list__link">
-                            Demo{' '}
-                            <RiShareBoxLine className="decode-list__icon" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    );
-};
+                    </ul>
+                </motion.div>
+            </li>
+        );
+    }
+);
+
+export const MProjectBox = motion(ProjectBox);

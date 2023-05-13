@@ -30,6 +30,12 @@ body {
     box-shadow: inset 0 0 8px $whiteColor;
 }
 
+/* Handle selection */
+::selection {
+    background-color: $thirdyColor;
+    color: $whiteColor;
+}
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
@@ -38,7 +44,7 @@ body {
     overflow: hidden;
 }
 
-[class*='__container'] {
+[class*="__container"] {
     max-width: $minWidthContainer + px;
     padding: 0px 15px;
     margin: 0px auto;
@@ -50,7 +56,7 @@ body {
 }
 
 .social-icon {
-    @include adaptiveValue('font-size', 24, 24);
+    @include adaptiveValue("font-size", 24, 24);
 }
 
 @media (max-width: #{$md2 + px}) {

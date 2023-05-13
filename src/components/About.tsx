@@ -1,3 +1,6 @@
+import React, { FC } from "react";
+import { motion } from "framer-motion";
+import clsx from "clsx";
 import {
     CssSvg,
     GitSvg,
@@ -9,10 +12,9 @@ import {
     SassSvg,
     StyledCompSvg,
     TypeScriptSvg,
-} from '@/assets/skills';
-import { scrollToSection } from '@/helpers/helpers';
-import clsx from 'clsx';
-import React, { FC } from 'react';
+} from "@/assets/skills";
+import { scrollToSection } from "@/helpers/helpers";
+import * as A from "@helpers/animations";
 
 interface IAbout {
     skills: {
@@ -48,27 +50,56 @@ export const About: FC<IAbout> = ({ skills }) => {
         StyledCompSvg: <StyledCompSvg />,
     };
     return (
-        <section id="about" className="section section-gray about">
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2, once: true }}
+            id="about"
+            className="section section-gray about"
+        >
             <div className="about__wrapper">
                 <div className="about__container">
                     <div className="about__body">
                         <div className="section-header">
-                            <h2 className="section-title">About Me</h2>
-                            <p className="section-subtitle">
+                            <motion.h2
+                                custom={1}
+                                variants={A.section_title}
+                                className="section-title"
+                            >
+                                About Me
+                            </motion.h2>
+                            <motion.p
+                                custom={2}
+                                variants={A.section_title}
+                                className="section-subtitle"
+                            >
                                 Here you will find more information about me,
                                 what I do, and my current skills mostly in terms
                                 of programming and technology
-                            </p>
+                            </motion.p>
                         </div>
                         <div className="about__main about-content">
-                            <div className="about-content__left">
-                                <h3 className="about-content--title">
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.2, once: true }}
+                                className="about-content__left"
+                            >
+                                <motion.h3
+                                    custom={1}
+                                    variants={A.about_text}
+                                    className="about-content--title"
+                                >
                                     Get to know me!
-                                </h3>
-                                <ul className="about-content__list">
+                                </motion.h3>
+                                <motion.ul
+                                    custom={2}
+                                    variants={A.about_text}
+                                    className="about-content__list"
+                                >
                                     <li className="about-content__item">
                                         <p className="about-content--text">
-                                            As a{' '}
+                                            As a{" "}
                                             <strong>
                                                 Junior Front-End Developer
                                             </strong>
@@ -77,41 +108,58 @@ export const About: FC<IAbout> = ({ skills }) => {
                                             offer a smooth user experience. My
                                             expertise lies in crafting dynamic,
                                             engaging interfaces through writing
-                                            <strong> clean</strong> and{' '}
+                                            <strong> clean</strong> and{" "}
                                             <strong>optimized </strong>
-                                            code and utilizing cutting-edge{' '}
+                                            code and utilizing cutting-edge{" "}
                                             <strong>
                                                 development tools
-                                            </strong>{' '}
+                                            </strong>{" "}
                                             and <strong>techniques</strong>. I
-                                            am also a{' '}
+                                            am also a{" "}
                                             <strong>team player</strong> who
                                             thrives in collaborating with
                                             cross-functional teams to produce
                                             outstanding web applications
                                         </p>
                                     </li>
-                                </ul>
-                                <button
-                                    type="button"
-                                    className="btn btn-primary"
-                                    onClick={() => scrollToSection('contact')}>
-                                    Contact
-                                </button>
-                            </div>
-                            <div className="about-content__right">
-                                <h3 className="about-content--title">
+                                </motion.ul>
+                                <motion.div custom={3} variants={A.about_text}>
+                                    <button
+                                        type="button"
+                                        className="btn btn-primary"
+                                        onClick={() =>
+                                            scrollToSection("contact")
+                                        }
+                                    >
+                                        Contact
+                                    </button>
+                                </motion.div>
+                            </motion.div>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.2, once: true }}
+                                className="about-content__right"
+                            >
+                                <motion.h3
+                                    custom={1}
+                                    variants={A.about_text}
+                                    className="about-content--title"
+                                >
                                     My Skills
-                                </h3>
+                                </motion.h3>
                                 <div className="skills">
                                     <ul className="skills__list">
                                         {skills.map((item) => (
-                                            <li
+                                            <motion.li
+                                                custom={item.id}
+                                                variants={A.about_skills}
                                                 key={item.id}
                                                 className={clsx(
-                                                    'skills__item',
-                                                    item.title,
-                                                )}>
+                                                    "skills__item",
+                                                    item.title
+                                                )}
+                                            >
                                                 <span className="skills-icon">
                                                     {
                                                         icons[
@@ -120,15 +168,15 @@ export const About: FC<IAbout> = ({ skills }) => {
                                                     }
                                                 </span>
                                                 {item.title}
-                                            </li>
+                                            </motion.li>
                                         ))}
                                     </ul>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
