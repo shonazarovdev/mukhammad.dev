@@ -68,16 +68,4 @@ const projects_list = {
     }
 }
 
-const footer_animation = {
-    hidden: {
-        y: 100,
-        opacity: 0
-    },
-    visible: (custom: number) => ({
-        y: 0,
-        opacity: 1,
-        transition: { delay: custom * 0.3 }
-    })
-}
-
-export { hero_text, hero_social, section_title, about_text, about_skills, projects_list, footer_animation }
+export { hero_text, hero_social, section_title, about_text, about_skills, projects_list }

@@ -18,5 +18,7 @@
 //    * Add Projects Pictures
 //    * Project Box Bug Fixed
 //    * New Animations
-
-// Hi
+// Update 1.1.1 = New Changes:
+//    * Add New Skill: [Tailwind]
+//    * Change Url of LinkedIn
+//    * Change ChatID of Contact Request

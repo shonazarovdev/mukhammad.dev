@@ -1,7 +1,5 @@
 import { FC } from "react";
 import { BsTelegram, BsGithub, BsLinkedin } from "react-icons/bs";
-import { motion } from "framer-motion";
-import * as A from "@helpers/animations";
 
 interface IFooter {
     data: {
@@ -24,35 +22,17 @@ export const Footer: FC<IFooter> = ({ data }) => {
     };
 
     return (
-        <motion.footer
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="footer"
-        >
-            <motion.div
-                custom={1}
-                variants={A.footer_animation}
-                className="footer__wrapper"
-            >
+        <footer className="footer">
+            <div className="footer__wrapper">
                 <div className="footer__container">
                     <div className="footer__body">
-                        <motion.p
-                            custom={2}
-                            variants={A.footer_animation}
-                            className="footer__text"
-                        >
+                        <p className="footer__text">
                             Copyright &copy; {new Date().getFullYear()}. All
                             rights are reserved
-                        </motion.p>
+                        </p>
                         <ul className="footer__main footer-list">
                             {data.map((item) => (
-                                <motion.li
-                                    custom={item.id + 2}
-                                    variants={A.footer_animation}
-                                    className="footer-list__item"
-                                    key={item.id}
-                                >
+                                <li className="footer-list__item" key={item.id}>
                                     <a
                                         href={item.link}
                                         target="_blank"
@@ -61,12 +41,12 @@ export const Footer: FC<IFooter> = ({ data }) => {
                                     >
                                         {icons[item.title as keyof TIcons]}
                                     </a>
-                                </motion.li>
+                                </li>
                             ))}
                         </ul>
                     </div>
                 </div>
-            </motion.div>
-        </motion.footer>
+            </div>
+        </footer>
     );
 };

@@ -73,7 +73,7 @@ export const Contact: FC = () => {
         const { name, email, message } = formState;
 
         // Form submission logic
-        const send = `<b>Имя:</b> ${name}\n<b>Электронная почта:</b> ${email}\n<b>Сообщение:</b> ${message}\n`;
+        const send = `<b>👤 Имя пользователя:</b> ${name}\n<b>📬 Электронная почта:</b> <code>${email}</code>\n<b>📩 Сообщение:</b> ${message}`;
         setLoading(true);
         try {
             await axios.post(URL_API, {

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { motion } from "framer-motion";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import {
     CssSvg,
     GitSvg,
@@ -11,6 +11,7 @@ import {
     ReactSvg,
     SassSvg,
     StyledCompSvg,
+    TailwindSvg,
     TypeScriptSvg,
 } from "@/assets/skills";
 import { scrollToSection } from "@/helpers/helpers";
@@ -36,6 +37,7 @@ export const About: FC<IAbout> = ({ skills }) => {
         GitSvg: React.ReactNode;
         GithubSvg: React.ReactNode;
         StyledCompSvg: React.ReactNode;
+        TailwindSvg: React.ReactNode;
     };
     const icons: TIcons = {
         HtmlSvg: <HtmlSvg />,
@@ -48,6 +50,7 @@ export const About: FC<IAbout> = ({ skills }) => {
         GitSvg: <GitSvg />,
         GithubSvg: <GithubSvg />,
         StyledCompSvg: <StyledCompSvg />,
+        TailwindSvg: <TailwindSvg />,
     };
     return (
         <motion.section

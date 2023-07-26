@@ -46,7 +46,7 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 2,
         name: 'LinkedIn',
         title: 'BsLinkedin',
-        link: 'https://www.linkedin.com/in/mukhammad-shonazarov-68878325a'
+        link: 'https://www.linkedin.com/in/mukhammadDev'
     },
     {
         id: 3,
@@ -106,6 +106,11 @@ export const skillsList: TSkillsList[] = [
         id: 10,
         title: 'Styled Components',
         icon: 'StyledCompSvg'
+    },
+    {
+        id: 11,
+        title: 'Tailwind',
+        icon: 'TailwindSvg'
     }
 ]
 

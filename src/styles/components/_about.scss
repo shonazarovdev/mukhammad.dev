@@ -89,6 +89,9 @@
                 &.Styled {
                     background-color: rgba(165, 56, 136, 0.5);
                 }
+                &.Tailwind {
+                    background-color: rgba(68, 168, 179, 0.5);
+                }
             }
         }
         @media (max-width: #{$md3 + px}) {
@@ -121,6 +124,9 @@
             }
             &.Styled {
                 background-color: rgba(165, 56, 136, 0.5);
+            }
+            &.Styled {
+                background-color: rgba(68, 168, 179, 0.5);
             }
         }
     }
