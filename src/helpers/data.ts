@@ -3,7 +3,7 @@ import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "
 export const heroData: THero = {
     title: 'Front-End React Developer',
     titleIcon: '',
-    desc: "Hi, I'm Mukhammad Khamidovic. A passionate Front-end React Developer based in Khorezm, Uzbekistan.",
+    desc: "Hi, I'm Mukhammad Khamidovic. A passionate Front-end Developer based in Khorezm, Uzbekistan.",
     descIcon: '📍'
 }
 
@@ -40,7 +40,7 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 1,
         name: 'Telegram',
         title: 'BsTelegram',
-        link: 'https://t.me/mukhammadDev'
+        link: 'https://t.me/themaverickmu'
     },
     {
         id: 2,
@@ -52,7 +52,7 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 3,
         name: 'Github',
         title: 'BsGithub',
-        link: 'https://github.com/MukhammadDev9'
+        link: 'https://github.com/themaverickmu'
     },
 ]
 
@@ -123,7 +123,7 @@ export const projectsList: TProjectsList[] = [
         image: '/images/projects/pro_1.jpeg',
         scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
-        code: 'https://github.com/MukhammadDev9/muhannad-next',
+        code: 'https://github.com/themaverickmu/muhannad-next',
         demo: 'https://muhannad-next.vercel.app/'
     },
     {
