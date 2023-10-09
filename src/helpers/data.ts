@@ -138,5 +138,3 @@ export const projectsList: TProjectsList[] = [
         demo: 'https://javlon-vite.vercel.app/'
     },
 ]
-
-// Hi
