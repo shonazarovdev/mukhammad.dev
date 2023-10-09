@@ -6,7 +6,7 @@
             rgba(245, 245, 245, 0.8),
             rgba(245, 245, 245, 0.8)
         ),
-        url('/images/hero-background.svg');
+        url('/public/images/hero-background.svg');
     // .contact__wrapper
     &__wrapper {
         width: 100%;
@@ -25,7 +25,6 @@
     &-form {
         margin-top: 90px;
         width: 70%;
-        height: 100%;
         background-color: $bodyColor;
         border-radius: 5px;
         box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;

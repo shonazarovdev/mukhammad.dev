@@ -120,7 +120,7 @@ export const projectsList: TProjectsList[] = [
         title: 'Muhannad Service',
         icon: '🧪',
         description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
-        image: '/images/projects/pro_1.jpeg',
+        image: '/images/projects/pro_1.webp',
         scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
         code: 'https://github.com/themaverickmu/muhannad-next',
@@ -131,10 +131,10 @@ export const projectsList: TProjectsList[] = [
         title: 'Portfolio',
         icon: '🌌',
         description: 'A portfolio website of UI/UX Designer Javlon. There are a lot of beautiful websites designed by Javlon.',
-        image: '/images/projects/pro_2.jpeg',
+        image: '/images/projects/pro_2.webp',
         scrollY: 2979,
         technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
-        code: '',
+        code: 'https://github.com/themaverickmu/javlon-vite',
         demo: 'https://javlon-vite.vercel.app/'
     },
 ]
