@@ -76,7 +76,7 @@ export const Header: FC<IHeader> = ({ data }) => {
                                                     : ""
                                             )}
                                             key={item.id}
-                                            onClick={() => setOpenMenu(false)}
+                                            onClick={() => setOpenMenu()}
                                         >
                                             <p
                                                 className="menu__link"
