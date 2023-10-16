@@ -123,7 +123,7 @@ export const projectsList: TProjectsList[] = [
         image: '/images/projects/pro_1.webp',
         scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
-        code: 'https://github.com/themaverickmu/muhannad-next',
+        code: 'https://github.com/shonazarovdev/muhannad-next',
         demo: 'https://muhannad-next.vercel.app/'
     },
     {
@@ -134,7 +134,7 @@ export const projectsList: TProjectsList[] = [
         image: '/images/projects/pro_2.webp',
         scrollY: 2979,
         technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
-        code: 'https://github.com/themaverickmu/javlon-vite',
+        code: 'https://github.com/shonazarovdev/javlon-vite',
         demo: 'https://javlon-vite.vercel.app/'
     },
 ]

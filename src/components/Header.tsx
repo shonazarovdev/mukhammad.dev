@@ -20,7 +20,7 @@ export const Header: FC<IHeader> = ({ data }) => {
 
     const handleOpenMenu = () => {
         setOpenMenu(!openMenu);
-        if (!openMenu) {
+        if (openMenu) {
             window.document.body.style.removeProperty("overflow");
             window.document.body.style.removeProperty("height");
         } else {
@@ -28,6 +28,8 @@ export const Header: FC<IHeader> = ({ data }) => {
             window.document.body.style.height = "100vh";
         }
     };
+
+    console.log(openMenu)
 
     const pageUp = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
