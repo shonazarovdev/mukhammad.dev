@@ -29,8 +29,6 @@ export const Header: FC<IHeader> = ({ data }) => {
         }
     };
 
-    console.log(openMenu)
-
     const pageUp = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
