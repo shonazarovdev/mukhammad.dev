@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { BsTelegram, BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 interface IFooter {
     data: {
@@ -14,11 +15,17 @@ export const Footer: FC<IFooter> = ({ data }) => {
         BsTelegram: JSX.Element;
         BsGithub: JSX.Element;
         BsLinkedin: JSX.Element;
+        FaFacebook: JSX.Element;
+        FaInstagram: JSX.Element;
+        FaTwitter: JSX.Element;
     };
     const icons: TIcons = {
         BsTelegram: <BsTelegram className="social-icon" />,
         BsGithub: <BsGithub className="social-icon" />,
         BsLinkedin: <BsLinkedin className="social-icon" />,
+        FaFacebook: <FaFacebook className="social-icon" />,
+        FaInstagram: <FaInstagram className="social-icon" />,
+        FaTwitter: <FaTwitter className="social-icon" />
     };
 
     return (

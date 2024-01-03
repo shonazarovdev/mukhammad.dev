@@ -40,19 +40,37 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 1,
         name: 'Telegram',
         title: 'BsTelegram',
-        link: 'https://t.me/themaverickmu'
+        link: 'https://t.me/shonazarovdev'
     },
     {
         id: 2,
         name: 'LinkedIn',
         title: 'BsLinkedin',
-        link: 'https://www.linkedin.com/in/mukhammadDev'
+        link: 'https://www.linkedin.com/in/mukhammaddev'
     },
     {
         id: 3,
         name: 'Github',
         title: 'BsGithub',
-        link: 'https://github.com/themaverickmu'
+        link: 'https://github.com/shonazarovdev'
+    },
+    {
+        id: 4,
+        name: 'Facebook',
+        title: 'FaFacebook',
+        link: 'https://facebook.com/mukhammaddev'
+    },
+    {
+        id: 5,
+        name: 'Instagram',
+        title: 'FaInstagram',
+        link: 'https://instagram.com/mukhammaddev'
+    },
+    {
+        id: 6,
+        name: 'Twitter',
+        title: 'FaTwitter',
+        link: 'https://twitter.com/mukhammaddev'
     },
 ]
 

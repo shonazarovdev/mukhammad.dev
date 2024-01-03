@@ -72,8 +72,8 @@
     // .menu__item
     &__item {
         @include flex();
-        margin: 0px 3px;
-        padding: 5px 0px;
+        margin: 0 3px;
+        padding: 5px 0;
 
         &.active {
             .menu__link {
@@ -127,7 +127,7 @@
             border-radius: 10rem;
             background-color: $blackColor;
             &:first-child {
-                top: 0px;
+                top: 0;
                 left: -1px;
                 bottom: auto;
             }

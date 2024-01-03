@@ -10,7 +10,7 @@
                 rgba(245, 245, 245, 0.8),
                 rgba(245, 245, 245, 0.8)
             ),
-            url("/images/hero-background.svg");
+            url("/public/images/hero-background.svg");
     }
     // .hero__container
     &__container {
@@ -29,16 +29,15 @@
     &__stacks {
         position: absolute;
         left: 0;
-        @media (min-width: #{$md4 + px}) {
-            bottom: 50%;
-            @include adaptiveValue("bottom", 350, 50);
+        @media (min-width: #{$md3 + px}) {
+            @include adaptiveValue("bottom", 150, 10);
             transform: translateY(50%);
         }
-        @media (max-width: #{$md4 + px}) {
+        @media (max-width: #{$md3 + px}) {
             border-radius: 5px 5px 5px 5px;
             @include flex();
             bottom: 0;
-            @include adaptiveValue("left", 80, 30);
+            @include adaptiveValue("left", 80, 20);
         }
     }
     // .hero__button
@@ -87,6 +86,15 @@
                 }
                 &.Github {
                     color: #211f1f;
+                }
+                &.Facebook {
+                    color: #316FF6;
+                }
+                &.Instagram {
+                    color: #E1306C;
+                }
+                &.Twitter {
+                    color: #1DA1F2;
                 }
                 background: #f1f1f1;
                 color: $mainColor;

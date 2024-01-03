@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { BsGithub, BsLinkedin, BsTelegram } from "react-icons/bs";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { scrollToSection } from "@/helpers/helpers";
@@ -29,11 +30,17 @@ export const Hero: FC<IHero> = ({
         BsTelegram: JSX.Element;
         BsGithub: JSX.Element;
         BsLinkedin: JSX.Element;
+        FaFacebook: JSX.Element;
+        FaInstagram: JSX.Element;
+        FaTwitter: JSX.Element;
     };
     const icons: TIcons = {
         BsTelegram: <BsTelegram className="social-icon" />,
         BsGithub: <BsGithub className="social-icon" />,
         BsLinkedin: <BsLinkedin className="social-icon" />,
+        FaFacebook: <FaFacebook className="social-icon" />,
+        FaInstagram: <FaInstagram className="social-icon" />,
+        FaTwitter: <FaTwitter className="social-icon" />,
     };
 
     const clickMouse = () => {
@@ -91,7 +98,6 @@ export const Hero: FC<IHero> = ({
                                     <a
                                         href={item.link}
                                         target="_blank"
-                                        rel="noopener noreferrer"
                                         className={clsx(
                                             "stack-list__link",
                                             item.name
