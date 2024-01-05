@@ -20,7 +20,7 @@ export const Header: FC<IHeader> = ({ data }) => {
 
     const handleOpenMenu = () => {
         setOpenMenu(!openMenu);
-        if (openMenu) {
+        if (!openMenu) {
             window.document.body.style.removeProperty("overflow");
             window.document.body.style.removeProperty("height");
         } else {
