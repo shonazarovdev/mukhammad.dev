@@ -27,11 +27,11 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
         useEffect(() => {
             const handleResize = () => {
                 const imageWrappers = document.querySelectorAll(
-                    ".project-item__image-wrapper"
+                    ".portfolio-item__image-wrapper"
                 );
 
                 const images = document.querySelectorAll(
-                    ".project-item__image"
+                    ".portfolio-item__image"
                 );
 
                 imageWrappers.forEach((wrapper) => {
@@ -50,8 +50,8 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
             <li
                 key={id}
                 className={clsx(
-                    "projects-list__item project-item",
-                    id % 2 === 0 && "project-item-reversed"
+                    "portfolio-list__item portfolio-item",
+                    id % 2 === 0 && "portfolio-item-reversed"
                 )}
                 ref={ref}
             >
@@ -60,14 +60,13 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
                     variants={A.projects_list}
                     href={demo}
                     target="_blank"
-                    rel="noreferrer"
                 >
-                    <div className="project-item__left">
-                        <div className="project-item__image-wrapper">
+                    <div className="portfolio-item__left">
+                        <div className="portfolio-item__image-wrapper">
                             <img
                                 src={image}
-                                alt="project-image"
-                                className="project-item__image"
+                                alt={title}
+                                className="portfolio-item__image"
                                 style={{
                                     transform: scroll
                                         ? `translateY(-${imageHeight}%)`
@@ -83,13 +82,13 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
                 <motion.div
                     custom={id}
                     variants={A.projects_list}
-                    className="project-item__right"
+                    className="portfolio-item__right"
                 >
-                    <h3 className="project-item__title">
+                    <h3 className="portfolio-item__title">
                         {title} {icon}
                     </h3>
-                    <p className="project-item__description">{description}</p>
-                    <ul className="project-item__techno techno-list">
+                    <p className="portfolio-item__description">{description}</p>
+                    <ul className="portfolio-item__techno techno-list">
                         {technologies.map((item, key) => (
                             <li key={key} className="techno-list__item">
                                 <p>{item}</p>

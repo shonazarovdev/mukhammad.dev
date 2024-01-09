@@ -1,9 +1,9 @@
-import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "./types";
+import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "@helpers/types";
 
 export const heroData: THero = {
     title: 'Front-End React Developer',
     titleIcon: '',
-    desc: "Hi, I'm Mukhammad Khamidovic. A passionate Front-end Developer based in Khorezm, Uzbekistan.",
+    desc: "Hi, I'm Muhammad Shonazarov. A passionate Front-end Developer based in Khorezm, Uzbekistan.",
     descIcon: '📍'
 }
 
@@ -22,9 +22,9 @@ export const menuList: TMenuList[] = [
     },
     {
         id: 3,
-        title: 'Projects',
-        link: '#projects',
-        name: 'projects'
+        title: 'Portfolio',
+        link: '#portfolio',
+        name: 'portfolio'
     },
     {
         id: 4,
@@ -135,7 +135,7 @@ export const skillsList: TSkillsList[] = [
 export const projectsList: TProjectsList[] = [
     {
         id: 1,
-        title: 'Muhannad Service',
+        title: 'Muhannad Sinov Service (December 2022)',
         icon: '🧪',
         description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
         image: '/images/projects/pro_1.webp',
@@ -146,7 +146,7 @@ export const projectsList: TProjectsList[] = [
     },
     {
         id: 2,
-        title: 'Portfolio',
+        title: 'Jony Portfolio (June 2023)',
         icon: '🌌',
         description: 'A portfolio website of UI/UX Designer Javlon. There are a lot of beautiful websites designed by Javlon.',
         image: '/images/projects/pro_2.webp',

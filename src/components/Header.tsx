@@ -17,15 +17,16 @@ export const Header: FC<IHeader> = ({ data }) => {
     const [openMenu, setOpenMenu] = useState(false);
     const { width } = useWindowSize();
     const isLarge = width && width >= 1440;
+    const isMobile = width && width <= 768
 
     const handleOpenMenu = () => {
-        setOpenMenu(!openMenu);
-        if (!openMenu) {
-            window.document.body.style.removeProperty("overflow");
-            window.document.body.style.removeProperty("height");
-        } else {
+        isMobile && setOpenMenu(prev => !prev);
+        if (openMenu) {
             window.document.body.style.overflow = "hidden";
             window.document.body.style.height = "100vh";
+        } else {
+            window.document.body.style.removeProperty("overflow");
+            window.document.body.style.removeProperty("height");
         }
     };
 
@@ -76,7 +77,7 @@ export const Header: FC<IHeader> = ({ data }) => {
                                                     : ""
                                             )}
                                             key={item.id}
-                                            onClick={() => handleOpenMenu()}
+                                            onClick={() => isMobile && handleOpenMenu()}
                                         >
                                             <p
                                                 className="menu__link"
@@ -97,7 +98,7 @@ export const Header: FC<IHeader> = ({ data }) => {
                                 "menu__icon icon-menu",
                                 openMenu && "_active"
                             )}
-                            onClick={handleOpenMenu}
+                            onClick={() => setOpenMenu(prev => !prev)}
                         >
                             {[1, 2, 3].map((_, key) => (
                                 <span key={key}></span>

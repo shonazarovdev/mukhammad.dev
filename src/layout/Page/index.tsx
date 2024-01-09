@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { Footer, Header, Main } from "@components/index";
-import { menuList, socialMediaList } from "@helpers/data";
+import { Footer, Header } from "@/components";
+import { menuList, socialMediaList } from "@/data";
 
 interface IPage {
     children: React.ReactNode;

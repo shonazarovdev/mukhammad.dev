@@ -83,9 +83,9 @@ export const Hero: FC<IHero> = ({
                                 <button
                                     type="button"
                                     className="btn btn-primary btn-block"
-                                    onClick={() => scrollToSection("projects")}
+                                    onClick={() => scrollToSection("portfolio")}
                                 >
-                                    Projects
+                                    Portfolio
                                 </button>
                             </motion.div>
                         </div>

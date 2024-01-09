@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import * as A from "@helpers/animations";
 import { MProjectBox } from "./ProjectBox";
 
-interface IProjects {
+interface IPortfolio {
     projects: {
         id: number;
         title: string;
@@ -17,18 +17,18 @@ interface IProjects {
     }[];
 }
 
-export const Projects: FC<IProjects> = ({ projects }) => {
+export const Portfolio: FC<IPortfolio> = ({ projects }) => {
     return (
         <motion.section
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.2, once: true }}
-            id="projects"
-            className="section projects"
+            id="portfolio"
+            className="section portfolio"
         >
-            <div className="projects__wrapper">
-                <div className="projects__container">
-                    <div className="projects__body">
+            <div className="portfolio__wrapper">
+                <div className="portfolio__container">
+                    <div className="portfolio__body">
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
@@ -40,7 +40,7 @@ export const Projects: FC<IProjects> = ({ projects }) => {
                                 variants={A.section_title}
                                 className="section-title"
                             >
-                                Projects
+                                Portfolio
                             </motion.h2>
                             <motion.p
                                 custom={2}
@@ -50,7 +50,7 @@ export const Projects: FC<IProjects> = ({ projects }) => {
                                 Each project is a unique piece of development 🧩
                             </motion.p>
                         </motion.div>
-                        <ul className="projects__main projects-list">
+                        <ul className="portfolio__main portfolio-list">
                             {projects.map((item, key) => (
                                 <MProjectBox
                                     initial="hidden"
