@@ -140,6 +140,12 @@ export const projectsList: TProjectsList[] = [
         description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
         image: '/images/desktop-pro_1.webp',
         imageMobile: '/images/mobile-pro_1.webp',
+        sizes: {
+            width: 620,
+            height: 2385,
+            widthMin: 655,
+            heightMin: 375
+        },
         scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
         code: 'https://github.com/shonazarovdev/muhannad-next',
@@ -152,6 +158,12 @@ export const projectsList: TProjectsList[] = [
         description: 'A portfolio website of UI/UX Designer Javlon. There are a lot of beautiful websites designed by Javlon.',
         image: '/images/desktop-pro_2.webp',
         imageMobile: '/images/desktop-pro_2.webp',
+        sizes: {
+            width: 620,
+            height: 2511,
+            widthMin: 655,
+            heightMin: 375
+        },
         scrollY: 2979,
         technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
         code: 'https://github.com/shonazarovdev/javlon-vite',

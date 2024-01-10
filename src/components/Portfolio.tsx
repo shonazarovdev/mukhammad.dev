@@ -2,20 +2,10 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import * as A from "../helpers/animations";
 import { MProjectBox } from "./ProjectBox";
+import { TProjectsList } from "../helpers/types";
 
 interface IPortfolio {
-    projects: {
-        id: number;
-        title: string;
-        icon: string;
-        description: string;
-        image: string;
-        imageMobile: string;
-        scrollY: number;
-        technologies: string[];
-        code: string;
-        demo: string;
-    }[];
+    projects: TProjectsList[];
 }
 
 export const Portfolio: FC<IPortfolio> = ({ projects }) => {

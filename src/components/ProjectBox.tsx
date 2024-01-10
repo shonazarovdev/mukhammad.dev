@@ -5,25 +5,14 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import * as A from "../helpers/animations";
 import useWindowSize from "../hooks/useWindowSize";
+import { TProjectsList } from "../helpers/types";
 
-interface IProject {
-    id: number;
-    title: string;
-    icon: string;
-    description: string;
-    image: string;
-    imageMobile: string
-    technologies: string[];
-    code: string;
-    demo: string;
-}
-
-export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
+export const ProjectBox: FC<TProjectsList> = forwardRef<HTMLLIElement, TProjectsList>(
     (
-        { id, title, icon, description, image, imageMobile, technologies, code, demo },
+        { id, title, icon, description, image, imageMobile, sizes, technologies, code, demo },
         ref
     ) => {
-        const [imageType, setImageType] = useState<any>();
+        const [imageType, setImageType] = useState<string>('');
         const [scroll, setScroll] = useState<boolean>(false);
         const [imageHeight, setImageHeight] = useState<number>(0);
         const { width } = useWindowSize();
@@ -31,7 +20,7 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
 
         useEffect(() => {
 
-            window.innerWidth <= 768 ? setImageType(imageMobile) : setImageType(image)
+            window.innerWidth <= 768 ? setImageType('mobile') : setImageType('desktop')
 
             window.addEventListener('resize', () => setImageType(isDesktop ? image : imageMobile))
 
@@ -78,7 +67,7 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
                     <div className="portfolio-item__left">
                         <div className="portfolio-item__image-wrapper">
                             <img
-                                src={imageType}
+                                src={imageType === 'desktop' ? image : imageMobile}
                                 alt={title}
                                 className="portfolio-item__image"
                                 style={{
@@ -89,6 +78,8 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
                                 }}
                                 onMouseEnter={() => !!isDesktop && setScroll(true)}
                                 onMouseLeave={() => !!isDesktop && setScroll(false)}
+                                width={imageType === 'desktop' ? sizes.width : sizes.widthMin}
+                                height={imageType === 'desktop' ? sizes.height : sizes.heightMin}
                             />
                         </div>
                     </div>
