@@ -3,7 +3,8 @@ import { BsGithub } from "react-icons/bs";
 import { RiShareBoxLine } from "react-icons/ri";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import * as A from "@helpers/animations";
+import * as A from "../helpers/animations";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface IProject {
     id: number;
@@ -11,6 +12,7 @@ interface IProject {
     icon: string;
     description: string;
     image: string;
+    imageMobile: string
     technologies: string[];
     code: string;
     demo: string;
@@ -18,11 +20,23 @@ interface IProject {
 
 export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
     (
-        { id, title, icon, description, image, technologies, code, demo },
+        { id, title, icon, description, image, imageMobile, technologies, code, demo },
         ref
     ) => {
+        const [imageType, setImageType] = useState<any>();
         const [scroll, setScroll] = useState<boolean>(false);
         const [imageHeight, setImageHeight] = useState<number>(0);
+        const { width } = useWindowSize();
+        const isDesktop = width && width >= 768
+
+        useEffect(() => {
+
+            window.innerWidth <= 768 ? setImageType(imageMobile) : setImageType(image)
+
+            window.addEventListener('resize', () => setImageType(isDesktop ? image : imageMobile))
+
+            return window.removeEventListener('resize', () => setImageType(isDesktop ? image : imageMobile))
+        }, []);
 
         useEffect(() => {
             const handleResize = () => {
@@ -64,17 +78,17 @@ export const ProjectBox: FC<IProject> = forwardRef<HTMLLIElement, IProject>(
                     <div className="portfolio-item__left">
                         <div className="portfolio-item__image-wrapper">
                             <img
-                                src={image}
+                                src={imageType}
                                 alt={title}
                                 className="portfolio-item__image"
                                 style={{
-                                    transform: scroll
+                                    transform: isDesktop && scroll
                                         ? `translateY(-${imageHeight}%)`
                                         : "translateY(0%)",
                                     transition: "transform 10s ease-in-out",
                                 }}
-                                onMouseEnter={() => setScroll(true)}
-                                onMouseLeave={() => setScroll(false)}
+                                onMouseEnter={() => !!isDesktop && setScroll(true)}
+                                onMouseLeave={() => !!isDesktop && setScroll(false)}
                             />
                         </div>
                     </div>

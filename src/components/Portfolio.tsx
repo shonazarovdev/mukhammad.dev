@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
-import * as A from "@helpers/animations";
+import * as A from "../helpers/animations";
 import { MProjectBox } from "./ProjectBox";
 
 interface IPortfolio {

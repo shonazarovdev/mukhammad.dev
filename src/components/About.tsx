@@ -13,9 +13,9 @@ import {
     StyledCompSvg,
     TailwindSvg,
     TypeScriptSvg,
-} from "@/assets/skills";
-import { scrollToSection } from "@/helpers/helpers";
-import * as A from "@helpers/animations";
+} from "../assets/skills";
+import { scrollToSection } from "../helpers/helpers";
+import * as A from "../helpers/animations";
 
 interface IAbout {
     skills: {

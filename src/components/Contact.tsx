@@ -4,9 +4,9 @@ import { toast, ToastContainer } from "react-toastify";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { regexEmail } from "@/helpers/helpers";
-import { CHAT_ID, URL_API } from "@/helpers/http";
-import * as A from "@helpers/animations";
+import { regexEmail } from "../helpers/helpers";
+import { CHAT_ID, URL_API } from "../helpers/http";
+import * as A from "../helpers/animations";
 
 interface FormState {
     name?: string;

@@ -4,8 +4,8 @@ import {
     projectsList,
     skillsList,
     socialMediaList,
-} from "@/data";
-import { About, Contact, Hero, Portfolio } from "@components/index";
+} from "../data";
+import { About, Contact, Hero, Portfolio } from "../components/index";
 
 export const Main: FC = () => {
     return (

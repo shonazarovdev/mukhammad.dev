@@ -1,4 +1,4 @@
-import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "@helpers/types";
+import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "../helpers/types";
 
 export const heroData: THero = {
     title: 'Front-End React Developer',
@@ -138,7 +138,8 @@ export const projectsList: TProjectsList[] = [
         title: 'Muhannad Sinov Service (December 2022)',
         icon: '🧪',
         description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
-        image: '/images/projects/pro_1.webp',
+        image: '/images/desktop-pro_1.webp',
+        imageMobile: '/images/mobile-pro_1.webp',
         scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
         code: 'https://github.com/shonazarovdev/muhannad-next',
@@ -149,7 +150,8 @@ export const projectsList: TProjectsList[] = [
         title: 'Jony Portfolio (June 2023)',
         icon: '🌌',
         description: 'A portfolio website of UI/UX Designer Javlon. There are a lot of beautiful websites designed by Javlon.',
-        image: '/images/projects/pro_2.webp',
+        image: '/images/desktop-pro_2.webp',
+        imageMobile: '/images/desktop-pro_2.webp',
         scrollY: 2979,
         technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
         code: 'https://github.com/shonazarovdev/javlon-vite',

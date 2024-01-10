@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import clsx from "clsx";
-import { scrollToSection } from "@/helpers/helpers";
-import useWindowSize from "@/hooks/useWindowSize";
+import { scrollToSection } from "../helpers/helpers";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface IHeader {
     data: {

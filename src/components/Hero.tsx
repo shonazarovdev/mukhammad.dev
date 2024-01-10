@@ -3,8 +3,8 @@ import { BsGithub, BsLinkedin, BsTelegram } from "react-icons/bs";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import { scrollToSection } from "@/helpers/helpers";
-import * as A from "@helpers/animations";
+import { scrollToSection } from "../helpers/helpers";
+import * as A from "../helpers/animations";
 
 interface IHero {
     social: {
