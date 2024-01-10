@@ -103,14 +103,14 @@ export const ProjectBox: FC<TProjectsList> = forwardRef<HTMLLIElement, TProjects
                     <ul className="decode-list">
                         {code.length !== 0 && (
                             <li className="decode-list__item">
-                                <a href={code} className="decode-list__link" target={"_blank"}>
+                                <a href={code} className="decode-list__link" target={"_blank"} title={'Source code ' + title}>
                                     Code{" "}
                                     <BsGithub className="decode-list__icon" />
                                 </a>
                             </li>
                         )}
                         <li className="decode-list__item">
-                            <a href={demo} className="decode-list__link" target={"_blank"}>
+                            <a href={demo} className="decode-list__link" target={"_blank"} title={'Demo ' + title}>
                                 Demo{" "}
                                 <RiShareBoxLine className="decode-list__icon" />
                             </a>

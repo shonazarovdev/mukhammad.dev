@@ -84,6 +84,7 @@ export const Hero: FC<IHero> = ({
                                     type="button"
                                     className="btn btn-primary btn-block"
                                     onClick={() => scrollToSection("portfolio")}
+                                    title="Go to Portfolio"
                                 >
                                     Portfolio
                                 </button>
@@ -102,6 +103,7 @@ export const Hero: FC<IHero> = ({
                                             "stack-list__link",
                                             item.name
                                         )}
+                                        title={item.title}
                                     >
                                         {icons[item.title as keyof TIcons]}
                                     </a>

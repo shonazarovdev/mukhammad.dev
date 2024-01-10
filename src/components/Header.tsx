@@ -99,6 +99,7 @@ export const Header: FC<IHeader> = ({ data }) => {
                                 openMenu && "_active"
                             )}
                             onClick={() => setOpenMenu(prev => !prev)}
+                            title="Open menu"
                         >
                             {[1, 2, 3].map((_, key) => (
                                 <span key={key}></span>

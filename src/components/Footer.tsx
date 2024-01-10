@@ -45,6 +45,7 @@ export const Footer: FC<IFooter> = ({ data }) => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="footer-list__link"
+                                        title={item.title}
                                     >
                                         {icons[item.title as keyof TIcons]}
                                     </a>

@@ -242,6 +242,7 @@ export const Contact: FC = () => {
                                 type="reset"
                                 className="btn btn-ghost"
                                 onClick={handleReset}
+                                title="Reset"
                             >
                                 Reset
                             </button>
@@ -253,6 +254,7 @@ export const Contact: FC = () => {
                                 <button
                                     type="submit"
                                     className="btn btn-primary"
+                                    title="Submit disabled"
                                 >
                                     Submit
                                 </button>
@@ -260,6 +262,7 @@ export const Contact: FC = () => {
                                 <button
                                     disabled={true}
                                     className="btn btn-ghost disabled contact-form-button"
+                                    title="Submit"
                                 >
                                     {loading && (
                                         <VscLoading className="loading-icon" />

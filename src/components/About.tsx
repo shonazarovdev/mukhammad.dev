@@ -133,6 +133,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                         onClick={() =>
                                             scrollToSection("contact")
                                         }
+                                        title="Go to Contact"
                                     >
                                         Contact
                                     </button>
