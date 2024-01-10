@@ -19,13 +19,8 @@ export const ProjectBox: FC<TProjectsList> = forwardRef<HTMLLIElement, TProjects
         const isDesktop = width && width >= 768
 
         useEffect(() => {
-
-            window.innerWidth <= 768 ? setImageType('mobile') : setImageType('desktop')
-
-            window.addEventListener('resize', () => setImageType(isDesktop ? image : imageMobile))
-
-            return window.removeEventListener('resize', () => setImageType(isDesktop ? image : imageMobile))
-        }, []);
+            setImageType(width <= 768 ? 'mobile' : 'desktop')
+        }, [width]);
 
         useEffect(() => {
             const handleResize = () => {
