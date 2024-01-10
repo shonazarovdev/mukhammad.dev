@@ -10,6 +10,7 @@ interface IPortfolio {
         icon: string;
         description: string;
         image: string;
+        imageMobile: string;
         scrollY: number;
         technologies: string[];
         code: string;
