@@ -1,23 +1,13 @@
 import { FC } from "react";
-import { BsGithub, BsLinkedin, BsTelegram } from "react-icons/bs";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { scrollToSection } from "../helpers/helpers";
 import * as A from "../helpers/animations";
+import { THero, TSocialMediaList } from "../helpers/types";
 
-interface IHero {
-    social: {
-        id: number;
-        name: string;
-        title: string;
-        link: string;
-    }[];
-    title: string;
-    titleIcon: string;
-    desc: string;
-    descIcon: string;
-}
+type IHero = {
+    social: TSocialMediaList[];
+} & THero
 
 export const Hero: FC<IHero> = ({
     title,
@@ -26,23 +16,6 @@ export const Hero: FC<IHero> = ({
     descIcon,
     social,
 }) => {
-    type TIcons = {
-        BsTelegram: JSX.Element;
-        BsGithub: JSX.Element;
-        BsLinkedin: JSX.Element;
-        FaFacebook: JSX.Element;
-        FaInstagram: JSX.Element;
-        FaTwitter: JSX.Element;
-    };
-    const icons: TIcons = {
-        BsTelegram: <BsTelegram className="social-icon" />,
-        BsGithub: <BsGithub className="social-icon" />,
-        BsLinkedin: <BsLinkedin className="social-icon" />,
-        FaFacebook: <FaFacebook className="social-icon" />,
-        FaInstagram: <FaInstagram className="social-icon" />,
-        FaTwitter: <FaTwitter className="social-icon" />,
-    };
-
     const clickMouse = () => {
         scrollToSection("about");
     };
@@ -103,9 +76,9 @@ export const Hero: FC<IHero> = ({
                                             "stack-list__link",
                                             item.name
                                         )}
-                                        title={item.title}
+                                        title={item.name}
                                     >
-                                        {icons[item.title as keyof TIcons]}
+                                        {item.icon}
                                     </a>
                                 </li>
                             ))}

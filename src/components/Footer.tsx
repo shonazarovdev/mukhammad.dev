@@ -1,33 +1,11 @@
 import { FC } from "react";
-import { BsTelegram, BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { TSocialMediaList } from "../helpers/types";
 
 interface IFooter {
-    data: {
-        id: number;
-        title: string;
-        link: string;
-    }[];
+    data: TSocialMediaList[];
 }
 
 export const Footer: FC<IFooter> = ({ data }) => {
-    type TIcons = {
-        BsTelegram: JSX.Element;
-        BsGithub: JSX.Element;
-        BsLinkedin: JSX.Element;
-        FaFacebook: JSX.Element;
-        FaInstagram: JSX.Element;
-        FaTwitter: JSX.Element;
-    };
-    const icons: TIcons = {
-        BsTelegram: <BsTelegram className="social-icon" />,
-        BsGithub: <BsGithub className="social-icon" />,
-        BsLinkedin: <BsLinkedin className="social-icon" />,
-        FaFacebook: <FaFacebook className="social-icon" />,
-        FaInstagram: <FaInstagram className="social-icon" />,
-        FaTwitter: <FaTwitter className="social-icon" />
-    };
-
     return (
         <footer className="footer">
             <div className="footer__wrapper">
@@ -45,9 +23,9 @@ export const Footer: FC<IFooter> = ({ data }) => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="footer-list__link"
-                                        title={item.title}
+                                        title={item.name}
                                     >
-                                        {icons[item.title as keyof TIcons]}
+                                        {item.icon}
                                     </a>
                                 </li>
                             ))}

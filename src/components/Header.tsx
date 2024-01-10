@@ -2,14 +2,10 @@ import { FC, useEffect, useState } from "react";
 import clsx from "clsx";
 import { scrollToSection } from "../helpers/helpers";
 import useWindowSize from "../hooks/useWindowSize";
+import { TMenuList } from "../helpers/types";
 
 interface IHeader {
-    data: {
-        id: number;
-        title: string;
-        link: string;
-        name: string;
-    }[];
+    data: TMenuList[];
 }
 
 export const Header: FC<IHeader> = ({ data }) => {

@@ -1,57 +1,15 @@
 import React, { FC } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import {
-    CssSvg,
-    GitSvg,
-    GithubSvg,
-    HtmlSvg,
-    JavaScriptSvg,
-    NextSvg,
-    ReactSvg,
-    SassSvg,
-    StyledCompSvg,
-    TailwindSvg,
-    TypeScriptSvg,
-} from "../assets/skills";
 import { scrollToSection } from "../helpers/helpers";
 import * as A from "../helpers/animations";
+import { TSkillsList } from "../helpers/types";
 
 interface IAbout {
-    skills: {
-        id: number;
-        title: string;
-        icon: string;
-    }[];
+    skills: TSkillsList[];
 }
 
 export const About: FC<IAbout> = ({ skills }) => {
-    type TIcons = {
-        HtmlSvg: React.ReactNode;
-        CssSvg: React.ReactNode;
-        SassSvg: React.ReactNode;
-        JavaScriptSvg: React.ReactNode;
-        TypeScriptSvg: React.ReactNode;
-        ReactSvg: React.ReactNode;
-        NextSvg: React.ReactNode;
-        GitSvg: React.ReactNode;
-        GithubSvg: React.ReactNode;
-        StyledCompSvg: React.ReactNode;
-        TailwindSvg: React.ReactNode;
-    };
-    const icons: TIcons = {
-        HtmlSvg: <HtmlSvg />,
-        CssSvg: <CssSvg />,
-        SassSvg: <SassSvg />,
-        JavaScriptSvg: <JavaScriptSvg />,
-        TypeScriptSvg: <TypeScriptSvg />,
-        ReactSvg: <ReactSvg />,
-        NextSvg: <NextSvg />,
-        GitSvg: <GitSvg />,
-        GithubSvg: <GithubSvg />,
-        StyledCompSvg: <StyledCompSvg />,
-        TailwindSvg: <TailwindSvg />,
-    };
     return (
         <motion.section
             initial="hidden"
@@ -165,11 +123,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                                 )}
                                             >
                                                 <span className="skills-icon">
-                                                    {
-                                                        icons[
-                                                            item.icon as keyof TIcons
-                                                        ]
-                                                    }
+                                                    {item.icon}
                                                 </span>
                                                 {item.title}
                                             </motion.li>

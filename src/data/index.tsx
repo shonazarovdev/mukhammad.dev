@@ -1,4 +1,17 @@
 import { THero, TMenuList, TProjectsList, TSkillsList, TSocialMediaList } from "../helpers/types";
+import { BsGithub, BsLinkedin, BsTelegram } from "react-icons/bs";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/all";
+import {
+    CssSvg,
+    GithubSvg,
+    GitSvg,
+    HtmlSvg,
+    JavaScriptSvg,
+    NextSvg,
+    ReactSvg,
+    SassSvg, StyledCompSvg, TailwindSvg,
+    TypeScriptSvg
+} from "../assets/skills";
 
 export const heroData: THero = {
     title: 'Front-End React Developer',
@@ -39,37 +52,37 @@ export const socialMediaList: TSocialMediaList[] = [
     {
         id: 1,
         name: 'Telegram',
-        title: 'BsTelegram',
+        icon: <BsTelegram/>,
         link: 'https://t.me/shonazarovdev'
     },
     {
         id: 2,
         name: 'LinkedIn',
-        title: 'BsLinkedin',
+        icon: <BsLinkedin/>,
         link: 'https://www.linkedin.com/in/mukhammaddev'
     },
     {
         id: 3,
         name: 'Github',
-        title: 'BsGithub',
+        icon: <BsGithub/>,
         link: 'https://github.com/shonazarovdev'
     },
     {
         id: 4,
         name: 'Facebook',
-        title: 'FaFacebook',
+        icon: <FaFacebook/>,
         link: 'https://facebook.com/mukhammaddev'
     },
     {
         id: 5,
         name: 'Instagram',
-        title: 'FaInstagram',
+        icon: <FaInstagram/>,
         link: 'https://instagram.com/mukhammaddev'
     },
     {
         id: 6,
         name: 'Twitter',
-        title: 'FaTwitter',
+        icon: <FaTwitter/>,
         link: 'https://twitter.com/mukhammaddev'
     },
 ]
@@ -78,57 +91,57 @@ export const skillsList: TSkillsList[] = [
     {
         id: 1,
         title: 'HTML',
-        icon: 'HtmlSvg'
+        icon: <HtmlSvg/>
     },
     {
         id: 2,
         title: 'CSS',
-        icon: 'CssSvg'
+        icon: <CssSvg/>
     },
     {
         id: 3,
         title: 'Scss',
-        icon: 'SassSvg'
+        icon: <SassSvg/>
     },
     {
         id: 4,
         title: 'JavaScript',
-        icon: 'JavaScriptSvg'
+        icon: <JavaScriptSvg/>
     },
     {
         id: 5,
         title: 'TypeScript',
-        icon: 'TypeScriptSvg'
+        icon: <TypeScriptSvg/>
     },
     {
         id: 6,
         title: 'React',
-        icon: 'ReactSvg'
+        icon: <ReactSvg/>
     },
     {
         id: 7,
         title: 'Next',
-        icon: 'NextSvg'
+        icon: <NextSvg/>
     },
     {
         id: 8,
         title: 'Git',
-        icon: 'GitSvg'
+        icon: <GitSvg/>
     },
     {
         id: 9,
         title: 'Github',
-        icon: 'GithubSvg'
+        icon: <GithubSvg/>
     },
     {
         id: 10,
         title: 'Styled Components',
-        icon: 'StyledCompSvg'
+        icon: <StyledCompSvg/>
     },
     {
         id: 11,
         title: 'Tailwind',
-        icon: 'TailwindSvg'
+        icon: <TailwindSvg/>
     }
 ]
 

@@ -10,7 +10,7 @@ export type TMenuList = NumberID & {
 
 export type TSocialMediaList = NumberID & {
     name: string
-    title: string
+    icon: React.ReactElement
     link: string
 }
 
@@ -23,7 +23,7 @@ export type THero = {
 
 export type TSkillsList = NumberID & {
     title: string
-    icon: string
+    icon: React.ReactNode
 }
 
 export type TProjectsList = NumberID & {
