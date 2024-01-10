@@ -1,28 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <!-- Title -->
-        <title>Muhammad Shonazarov - Front-end Developer</title>
-        <!-- Description -->
-        <meta name="description" content="Welcome to my developer portfolio! Explore a collection of my projects and web applications showcasing my expertise in building dynamic and interactive user interfaces. With a passion for clean code and innovative solutions, I strive to create seamless user experiences that blend functionality with stunning designs." />
-        <!-- Keywords -->
-        <meta name="keywords" content="Shonazarov Muhammad Frontend Developer, Mukhammad dev, Mukhammaddev, Mukhammad Shonazarov, Muhammad Shonazarov, Muhammad Shonazarov, Muhammad Dev, MuhammadDev, Frontend Developer, MukhammadDev portfolio" />
-        <!-- Author -->
-        <meta name="author" content="Muhammad Shonazarov" />
-        <!-- Image -->
-        <link rel="icon" href="/favicon.svg" />
-        <!-- Open Graph Protocol -->
-        <meta property="og:title" content="Muhammad Shonazarov" />
-        <meta property="og:description" content="Welcome to my developer portfolio! Explore a collection of my projects and web applications showcasing my expertise in building dynamic and interactive user interfaces. With a passion for clean code and innovative solutions, I strive to create seamless user experiences that blend functionality with stunning designs." />
-        <meta property="og:image" content="/favicon.png" />
-        <meta property="og:url" content="MukhammadDev" />
-        <!-- General -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Content-Language" content="en" />
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
-    </body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://www.mukhammaddev.uz/</loc>
+        <lastmod>2024-01-10</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>
