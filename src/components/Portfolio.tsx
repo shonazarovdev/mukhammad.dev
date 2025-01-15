@@ -42,7 +42,7 @@ export const Portfolio: FC<IPortfolio> = ({ projects }) => {
                             </motion.p>
                         </motion.div>
                         <ul className="portfolio__main portfolio-list">
-                            {projects.map((item, key) => (
+                            {projects.reverse().map((item, key) => (
                                 <MProjectBox
                                     initial="hidden"
                                     whileInView="visible"

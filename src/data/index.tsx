@@ -147,22 +147,58 @@ export const skillsList: TSkillsList[] = [
 
 export const projectsList: TProjectsList[] = [
     {
-        id: 1,
-        title: 'Muhannad Sinov Service (December 2022)',
-        icon: '🧪',
-        description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
-        image: '/images/desktop-pro_1.webp',
-        imageMobile: '/images/mobile-pro_1.webp',
+        id: 5,
+        title: 'Yancar Design (January 2025)',
+        icon: '🏎️',
+        description: 'Web-menu of Yancar Design. You can get awesome products and services for your car, let\'s talk less and just visit...',
+        image: '/images/desktop-pro_5.avif',
+        imageMobile: '/images/desktop-pro_5.avif',
         sizes: {
             width: 620,
-            height: 2385,
+            height: 2511,
             widthMin: 655,
             heightMin: 375
         },
-        scrollY: 2825,
-        technologies: ['Next.Js', 'SCSS'],
-        code: 'https://github.com/shonazarovdev/muhannad-next',
-        demo: 'https://muhannad-next.vercel.app/'
+        scrollY: 2961,
+        technologies: ['React', 'TailwindCSS', 'JavaScript'],
+        code: '',
+        demo: 'https://yancar.uz/'
+    },
+    {
+        id: 4,
+        title: 'Uyga (November 2024)',
+        icon: '🏡',
+        description: 'An official website of Uyga. You can get some information about product and discover their services',
+        image: '/images/desktop-pro_4.avif',
+        imageMobile: '/images/desktop-pro_4.avif',
+        sizes: {
+            width: 620,
+            height: 2511,
+            widthMin: 655,
+            heightMin: 375
+        },
+        scrollY: 2961,
+        technologies: ['Laravel', 'TailwindCSS', 'JQuery'],
+        code: '',
+        demo: 'https://uyga.pro/'
+    },
+    {
+        id: 3,
+        title: 'MilliyPay (June 2024)',
+        icon: '📱',
+        description: 'An official website of MilliyPay. You can get some information about this company and introduce their products',
+        image: '/images/desktop-pro_3.avif',
+        imageMobile: '/images/desktop-pro_3.avif',
+        sizes: {
+            width: 620,
+            height: 2511,
+            widthMin: 655,
+            heightMin: 375
+        },
+        scrollY: 2961,
+        technologies: ['Laravel', 'TailwindCSS', 'JQuery'],
+        code: '',
+        demo: 'https://milliypay.uz/'
     },
     {
         id: 2,
@@ -181,6 +217,24 @@ export const projectsList: TProjectsList[] = [
         technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
         code: 'https://github.com/shonazarovdev/javlon-vite',
         demo: 'https://javlon-vite.vercel.app/'
+    },
+    {
+        id: 1,
+        title: 'Muhannad Sinov Service (December 2022)',
+        icon: '🧪',
+        description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
+        image: '/images/desktop-pro_1.webp',
+        imageMobile: '/images/desktop-pro_1.webp',
+        sizes: {
+            width: 620,
+            height: 2385,
+            widthMin: 655,
+            heightMin: 375
+        },
+        scrollY: 2825,
+        technologies: ['Next.Js', 'SCSS'],
+        code: 'https://github.com/shonazarovdev/muhannad-next',
+        demo: 'https://muhannad-next.vercel.app/'
     },
 ]
 
