@@ -147,7 +147,7 @@ export const skillsList: TSkillsList[] = [
 
 export const projectsList: TProjectsList[] = [
     {
-        id: 5,
+        id: 6,
         title: 'Yancar Design (January 2025)',
         icon: '🏎️',
         description: 'Web-menu of Yancar Design. You can get awesome products and services for your car, let\'s talk less and just visit...',
@@ -165,7 +165,7 @@ export const projectsList: TProjectsList[] = [
         demo: 'https://yancar.uz/'
     },
     {
-        id: 4,
+        id: 5,
         title: 'Uyga (November 2024)',
         icon: '🏡',
         description: 'An official website of Uyga. You can get some information about product and discover their services',
@@ -183,7 +183,7 @@ export const projectsList: TProjectsList[] = [
         demo: 'https://uyga.pro/'
     },
     {
-        id: 3,
+        id: 4,
         title: 'MilliyPay (June 2024)',
         icon: '📱',
         description: 'An official website of MilliyPay. You can get some information about this company and introduce their products',
@@ -196,6 +196,24 @@ export const projectsList: TProjectsList[] = [
             heightMin: 375
         },
         scrollY: 2961,
+        technologies: ['Laravel', 'TailwindCSS', 'JQuery'],
+        code: '',
+        demo: 'https://milliypay.uz/'
+    },
+    {
+        id: 3,
+        title: 'ORZU GROUP (August 2023)',
+        icon: '📱',
+        description: 'Web-menu of ORZU GROUP. You can find cool products for your food!',
+        image: '/images/desktop-pro_6.avif',
+        imageMobile: '/images/desktop-pro_6.avif',
+        sizes: {
+            width: 360,
+            height: 1632,
+            widthMin: 655,
+            heightMin: 375
+        },
+        scrollY: 1000,
         technologies: ['Laravel', 'TailwindCSS', 'JQuery'],
         code: '',
         demo: 'https://milliypay.uz/'
