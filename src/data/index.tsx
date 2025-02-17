@@ -234,7 +234,7 @@ export const projectsList: TProjectsList[] = [
         scrollY: 2979,
         technologies: ['Vite.Js', 'SCSS', 'TypeScript'],
         code: 'https://github.com/shonazarovdev/javlon-vite',
-        demo: 'https://javlon-vite.vercel.app/'
+        demo: 'https://jony.vercel.app/'
     },
     {
         id: 1,
