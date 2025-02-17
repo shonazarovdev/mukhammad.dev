@@ -252,7 +252,7 @@ export const projectsList: TProjectsList[] = [
         scrollY: 2825,
         technologies: ['Next.Js', 'SCSS'],
         code: 'https://github.com/shonazarovdev/muhannad-next',
-        demo: 'https://muhannad-next.vercel.app/'
+        demo: 'https://mss-sert.uz/'
     },
 ]
 
