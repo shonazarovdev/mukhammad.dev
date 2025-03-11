@@ -10,8 +10,7 @@ interface IAbout {
 }
 
 export const About: FC<IAbout> = ({ skills }) => {
-    return (
-        <motion.section
+    return (<motion.section
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.2, once: true }}
@@ -60,27 +59,45 @@ export const About: FC<IAbout> = ({ skills }) => {
                                 >
                                     <li className="about-content__item">
                                         <p className="about-content--text">
-                                            As a{" "}
-                                            <strong>
-                                                Junior Front-End Developer
-                                            </strong>
-                                            , I excel in designing and
-                                            maintaining responsive websites that
-                                            offer a smooth user experience. My
-                                            expertise lies in crafting dynamic,
-                                            engaging interfaces through writing
-                                            <strong> clean</strong> and{" "}
-                                            <strong>optimized </strong>
-                                            code and utilizing cutting-edge{" "}
-                                            <strong>
-                                                development tools
-                                            </strong>{" "}
-                                            and <strong>techniques</strong>. I
-                                            am also a{" "}
-                                            <strong>team player</strong> who
-                                            thrives in collaborating with
-                                            cross-functional teams to produce
-                                            outstanding web applications
+                                            {/*As a{" "}*/}
+                                            {/*<strong>*/}
+                                            {/*    Junior Front-End Developer*/}
+                                            {/*</strong>*/}
+                                            {/*, I excel in designing and*/}
+                                            {/*maintaining responsive websites that*/}
+                                            {/*offer a smooth user experience. My*/}
+                                            {/*expertise lies in crafting dynamic,*/}
+                                            {/*engaging interfaces through writing*/}
+                                            {/*<strong> clean</strong> and{" "}*/}
+                                            {/*<strong>optimized </strong>*/}
+                                            {/*code and utilizing cutting-edge{" "}*/}
+                                            {/*<strong>*/}
+                                            {/*    development tools*/}
+                                            {/*</strong>{" "}*/}
+                                            {/*and <strong>techniques</strong>. I*/}
+                                            {/*am also a{" "}*/}
+                                            {/*<strong>team player</strong> who*/}
+                                            {/*thrives in collaborating with*/}
+                                            {/*cross-functional teams to produce*/}
+                                            {/*outstanding web applications*/}
+
+                                            👋 Привет! Меня зовут Mukhammad, и я увлечен разработкой цифровых продуктов,
+                                            которые совмещают эстетику, удобство и технологичность.
+                                            <br /><br />
+                                            Я начинал свой путь как фронтенд-разработчик, создавая адаптивные
+                                            веб-приложения, сложные анимации и удобные интерфейсы. Однако мир IT слишком
+                                            огромен, чтобы остановиться на одном направлении. Сейчас я активно
+                                            развиваюсь в мобильной разработке на Flutter, потому что мне нравится писать
+                                            продуманный, эффективный код и создавать приложения, которые работают на
+                                            разных платформах.
+                                            <br /><br />
+                                            В своих проектах я ценю чистоту кода, продуманный UX/UI и оптимизированную
+                                            архитектуру. Люблю работать в команде, если коллектив заряжен на результат,
+                                            но и в одиночку могу довести задачу до идеала.
+                                            <br /><br />
+                                            Каждый новый проект для меня — это возможность не только создать что-то
+                                            крутое, но и улучшить свои навыки. Если у тебя есть интересный проект или
+                                            идея — давай обсудим! 🚀
                                         </p>
                                     </li>
                                 </motion.ul>
@@ -88,9 +105,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                     <button
                                         type="button"
                                         className="btn btn-primary"
-                                        onClick={() =>
-                                            scrollToSection("contact")
-                                        }
+                                        onClick={() => scrollToSection("contact")}
                                         title="Go to Contact"
                                     >
                                         Contact
@@ -112,22 +127,17 @@ export const About: FC<IAbout> = ({ skills }) => {
                                 </motion.h3>
                                 <div className="skills">
                                     <ul className="skills__list">
-                                        {skills.map((item) => (
-                                            <motion.li
+                                        {skills.map((item) => (<motion.li
                                                 custom={item.id}
                                                 variants={A.about_skills}
                                                 key={item.id}
-                                                className={clsx(
-                                                    "skills__item",
-                                                    item.title
-                                                )}
+                                                className={clsx("skills__item", item.title)}
                                             >
                                                 <span className="skills-icon">
                                                     {item.icon}
                                                 </span>
                                                 {item.title}
-                                            </motion.li>
-                                        ))}
+                                            </motion.li>))}
                                     </ul>
                                 </div>
                             </motion.div>
@@ -135,6 +145,5 @@ export const About: FC<IAbout> = ({ skills }) => {
                     </div>
                 </div>
             </div>
-        </motion.section>
-    );
+        </motion.section>);
 };
