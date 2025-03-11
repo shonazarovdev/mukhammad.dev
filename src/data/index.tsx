@@ -53,13 +53,13 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 1,
         name: 'Telegram',
         icon: <BsTelegram/>,
-        link: 'https://t.me/shonazarovdev'
+        link: 'https://t.me/Muhammad_Shonazarov'
     },
     {
         id: 2,
         name: 'LinkedIn',
         icon: <BsLinkedin/>,
-        link: 'https://www.linkedin.com/in/mukhammaddev'
+        link: 'https://www.linkedin.com/in/muhammad-shonazarov'
     },
     {
         id: 3,
@@ -71,13 +71,13 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 4,
         name: 'Facebook',
         icon: <FaFacebook/>,
-        link: 'https://facebook.com/mukhammaddev'
+        link: 'https://facebook.com/shonazarovmuhammad'
     },
     {
         id: 5,
         name: 'Instagram',
         icon: <FaInstagram/>,
-        link: 'https://instagram.com/mukhammaddev'
+        link: 'https://instagram.com/mukhammad.028'
     },
     {
         id: 6,
