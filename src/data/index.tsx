@@ -14,34 +14,34 @@ import {
 } from "../assets/skills";
 
 export const heroData: THero = {
-    title: 'Front-End React Developer',
+    title: 'Frontend JavaScript Developer',
     titleIcon: '',
-    desc: "Hi, I'm Muhammad Shonazarov. A passionate Front-end Developer based in Khorezm, Uzbekistan.",
+    desc: "Привет, меня зовут Шоназаров Мухаммад. Я веб-разработчик из Хорезма",
     descIcon: '📍'
 }
 
 export const menuList: TMenuList[] = [
     {
         id: 1,
-        title: "Home",
+        title: "Главная",
         link: '#home',
         name: 'home'
     },
     {
         id: 2,
-        title: 'About',
+        title: 'Обо мне',
         link: '#about',
         name: 'about'
     },
     {
         id: 3,
-        title: 'Portfolio',
+        title: 'Портфолио',
         link: '#portfolio',
         name: 'portfolio'
     },
     {
         id: 4,
-        title: 'Contact',
+        title: 'Контакты',
         link: '#contact',
         name: 'contact'
     },
@@ -150,7 +150,7 @@ export const projectsList: TProjectsList[] = [
         id: 6,
         title: 'Yancar Design (January 2025)',
         icon: '🏎️',
-        description: 'Web-menu of Yancar Design. You can get awesome products and services for your car, let\'s talk less and just visit...',
+        description: 'Веб-сайт компании Yancar Design. Вы можете получить приятные товары и услуги для вашего автомобиля, поговорим меньше и просто посетите...',
         image: '/images/desktop-pro_5.avif',
         imageMobile: '/images/desktop-pro_5.avif',
         sizes: {
@@ -168,7 +168,7 @@ export const projectsList: TProjectsList[] = [
         id: 5,
         title: 'Uyga (November 2024)',
         icon: '🏡',
-        description: 'An official website of Uyga. You can get some information about product and discover their services',
+        description: 'Официальный сайт компании Uyga. Вы можете получить информацию о продукте и ознакомиться с их услугами',
         image: '/images/desktop-pro_4.avif',
         imageMobile: '/images/desktop-pro_4.avif',
         sizes: {
@@ -186,7 +186,7 @@ export const projectsList: TProjectsList[] = [
         id: 4,
         title: 'MilliyPay (June 2024)',
         icon: '📱',
-        description: 'An official website of MilliyPay. You can get some information about this company and introduce their products',
+        description: 'Официальный сайт компании MilliyPay. Вы можете получить информацию о продукте и ознакомиться с их услугами',
         image: '/images/desktop-pro_3.avif',
         imageMobile: '/images/desktop-pro_3.avif',
         sizes: {
@@ -204,7 +204,7 @@ export const projectsList: TProjectsList[] = [
         id: 3,
         title: 'ORZU GROUP (August 2023)',
         icon: '📱',
-        description: 'Web-menu of ORZU GROUP. You can find cool products for your food!',
+        description: 'Веб-сайт компании ORZU GROUP. Вы можете получить приятные товары для вашего питания',
         image: '/images/desktop-pro_6.avif',
         imageMobile: '/images/desktop-pro_6.avif',
         sizes: {
@@ -222,7 +222,7 @@ export const projectsList: TProjectsList[] = [
         id: 2,
         title: 'Jony Portfolio (June 2023)',
         icon: '🌌',
-        description: 'A portfolio website of UI/UX Designer Javlon. There are a lot of beautiful websites designed by Javlon.',
+        description: 'Портфолио веб-сайта дизайнера Javlon. Есть много красивых сайтов, разработанных от имени Javlon',
         image: '/images/desktop-pro_2.webp',
         imageMobile: '/images/desktop-pro_2.webp',
         sizes: {
@@ -240,7 +240,7 @@ export const projectsList: TProjectsList[] = [
         id: 1,
         title: 'Muhannad Sinov Service (December 2022)',
         icon: '🧪',
-        description: 'A testing service website. The service serves manufacturers, suppliers of construction products and provides services for certification',
+        description: 'Веб-сайт компании Muhannad Sinov Service. Вы можете получить качественные услуги для вашего бизнеса',
         image: '/images/desktop-pro_1.webp',
         imageMobile: '/images/desktop-pro_1.webp',
         sizes: {
