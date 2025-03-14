@@ -59,7 +59,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                 >
                                     <li className="about-content__item">
                                         <p className="about-content--text">
-                                            {/*As a{" "}*/}
+                                            {/*As a*/}
                                             {/*<strong>*/}
                                             {/*    Junior Front-End Developer*/}
                                             {/*</strong>*/}
@@ -75,7 +75,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                             {/*    development tools*/}
                                             {/*</strong>{" "}*/}
                                             {/*and <strong>techniques</strong>. I*/}
-                                            {/*am also a{" "}*/}
+                                            {/*am also a*/}
                                             {/*<strong>team player</strong> who*/}
                                             {/*thrives in collaborating with*/}
                                             {/*cross-functional teams to produce*/}
