@@ -83,7 +83,7 @@ export const socialMediaList: TSocialMediaList[] = [
         id: 6,
         name: 'Twitter',
         icon: <FaTwitter/>,
-        link: 'https://twitter.com/mukhammaddev'
+        link: 'https://x.com/mukhammaddev'
     },
 ]
 
