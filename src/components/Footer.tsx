@@ -12,7 +12,7 @@ export const Footer: FC<IFooter> = ({ data }) => {
                 <div className="footer__container">
                     <div className="footer__body">
                         <p className="footer__text">
-                            Copyright &copy; {new Date().getFullYear()}. All
+                            &copy; 2021. All
                             rights are reserved
                         </p>
                         <ul className="footer__main footer-list">
