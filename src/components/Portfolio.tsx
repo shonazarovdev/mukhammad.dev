@@ -31,14 +31,14 @@ export const Portfolio: FC<IPortfolio> = ({ projects }) => {
                                 variants={A.section_title}
                                 className="section-title"
                             >
-                                Portfolio
+                                Портфолио
                             </motion.h2>
                             <motion.p
                                 custom={2}
                                 variants={A.section_title}
                                 className="section-subtitle"
                             >
-                                Each project is a unique piece of development 🧩
+                                Каждый проект — это уникальный образец развития 🧩
                             </motion.p>
                         </motion.div>
                         <ul className="portfolio__main portfolio-list">
