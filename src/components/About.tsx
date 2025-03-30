@@ -26,16 +26,14 @@ export const About: FC<IAbout> = ({ skills }) => {
                                 variants={A.section_title}
                                 className="section-title"
                             >
-                                About Me
+                                Обо мне
                             </motion.h2>
                             <motion.p
                                 custom={2}
                                 variants={A.section_title}
                                 className="section-subtitle"
                             >
-                                Here you will find more information about me,
-                                what I do, and my current skills mostly in terms
-                                of programming and technology
+                                Здесь вы найдете больше информации обо мне, чем я занимаюсь и моих текущих навыках, в основном в области программирования и технологий.
                             </motion.p>
                         </div>
                         <div className="about__main about-content">
@@ -50,7 +48,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                     variants={A.about_text}
                                     className="about-content--title"
                                 >
-                                    Get to know me!
+                                    Познакомьтесь со мной поближе!
                                 </motion.h3>
                                 <motion.ul
                                     custom={2}
@@ -59,29 +57,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                 >
                                     <li className="about-content__item">
                                         <p className="about-content--text">
-                                            {/*As a*/}
-                                            {/*<strong>*/}
-                                            {/*    Junior Front-End Developer*/}
-                                            {/*</strong>*/}
-                                            {/*, I excel in designing and*/}
-                                            {/*maintaining responsive websites that*/}
-                                            {/*offer a smooth user experience. My*/}
-                                            {/*expertise lies in crafting dynamic,*/}
-                                            {/*engaging interfaces through writing*/}
-                                            {/*<strong> clean</strong> and{" "}*/}
-                                            {/*<strong>optimized </strong>*/}
-                                            {/*code and utilizing cutting-edge{" "}*/}
-                                            {/*<strong>*/}
-                                            {/*    development tools*/}
-                                            {/*</strong>{" "}*/}
-                                            {/*and <strong>techniques</strong>. I*/}
-                                            {/*am also a*/}
-                                            {/*<strong>team player</strong> who*/}
-                                            {/*thrives in collaborating with*/}
-                                            {/*cross-functional teams to produce*/}
-                                            {/*outstanding web applications*/}
-
-                                            👋 Привет! Меня зовут Mukhammad, и я увлечен разработкой цифровых продуктов,
+                                            👋 Привет! Меня зовут Muhammad, и я увлечен разработкой цифровых продуктов,
                                             которые совмещают эстетику, удобство и технологичность.
                                             <br /><br />
                                             Я начинал свой путь как фронтенд-разработчик, создавая адаптивные
@@ -108,7 +84,7 @@ export const About: FC<IAbout> = ({ skills }) => {
                                         onClick={() => scrollToSection("contact")}
                                         title="Go to Contact"
                                     >
-                                        Contact
+                                        Контакт
                                     </button>
                                 </motion.div>
                             </motion.div>
@@ -123,14 +99,14 @@ export const About: FC<IAbout> = ({ skills }) => {
                                     variants={A.about_text}
                                     className="about-content--title"
                                 >
-                                    My Skills
+                                    Мои навыки
                                 </motion.h3>
                                 <div className="skills">
                                     <ul className="skills__list">
-                                        {skills.map((item) => (<motion.li
-                                                custom={item.id}
+                                        {skills.map((item, index) => (<motion.li
+                                                custom={index++}
                                                 variants={A.about_skills}
-                                                key={item.id}
+                                                key={index}
                                                 className={clsx("skills__item", item.title)}
                                             >
                                                 <span className="skills-icon">

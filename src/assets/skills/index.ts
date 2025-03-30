@@ -9,5 +9,8 @@ import { SassSvg } from "./SassSvg";
 import { StyledCompSvg } from "./StyledCompSvg";
 import { TypeScriptSvg } from "./TypeScriptSvg";
 import { TailwindSvg } from './TailwindSvg'
+import { VueSvg } from './VueSvg'
+import { ViteSvg } from './ViteSvg'
+import { GraphqlSvg } from './GraphqlSvg'
 
-export { CssSvg, GitSvg, GithubSvg, HtmlSvg, JavaScriptSvg, NextSvg, ReactSvg, SassSvg, StyledCompSvg, TypeScriptSvg, TailwindSvg }
+export { CssSvg, GitSvg, GithubSvg, HtmlSvg, JavaScriptSvg, NextSvg, ReactSvg, SassSvg, StyledCompSvg, TypeScriptSvg, TailwindSvg, VueSvg, ViteSvg, GraphqlSvg }

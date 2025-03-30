@@ -10,7 +10,7 @@ import {
     NextSvg,
     ReactSvg,
     SassSvg, StyledCompSvg, TailwindSvg,
-    TypeScriptSvg
+    TypeScriptSvg, VueSvg, ViteSvg, GraphqlSvg
 } from "../assets/skills";
 
 export const heroData: THero = {
@@ -89,67 +89,68 @@ export const socialMediaList: TSocialMediaList[] = [
 
 export const skillsList: TSkillsList[] = [
     {
-        id: 1,
         title: 'HTML',
         icon: <HtmlSvg/>
     },
     {
-        id: 2,
         title: 'CSS',
         icon: <CssSvg/>
     },
     {
-        id: 3,
         title: 'Scss',
         icon: <SassSvg/>
     },
     {
-        id: 4,
         title: 'JavaScript',
         icon: <JavaScriptSvg/>
     },
     {
-        id: 5,
         title: 'TypeScript',
         icon: <TypeScriptSvg/>
     },
     {
-        id: 6,
         title: 'React',
         icon: <ReactSvg/>
     },
     {
-        id: 7,
-        title: 'Next',
-        icon: <NextSvg/>
+        title: 'Vue',
+        icon: <VueSvg/>
     },
     {
-        id: 8,
-        title: 'Git',
-        icon: <GitSvg/>
+        title: 'Vite',
+        icon: <ViteSvg/>
     },
     {
-        id: 9,
-        title: 'Github',
-        icon: <GithubSvg/>
+        title: "Next",
+        icon: <NextSvg />
     },
     {
-        id: 10,
-        title: 'Styled Components',
-        icon: <StyledCompSvg/>
+        title: "Git",
+        icon: <GitSvg />
     },
     {
-        id: 11,
-        title: 'Tailwind',
-        icon: <TailwindSvg/>
+        title: "Github",
+        icon: <GithubSvg />
+    },
+    {
+        title: "Styled Components",
+        icon: <StyledCompSvg />
+    },
+    {
+        title: "Tailwind",
+        icon: <TailwindSvg />
+    },
+    {
+        title: "GraphQL",
+        icon: <GraphqlSvg />
     }
 ]
 
 export const projectsList: TProjectsList[] = [
     {
         id: 6,
-        title: 'Yancar Design (January 2025)',
-        icon: '🏎️',
+        title: "Yancar Design (January 2025)",
+        icon: "🏎️",
         description: 'Веб-сайт компании Yancar Design. Вы можете получить приятные товары и услуги для вашего автомобиля, поговорим меньше и просто посетите...',
         image: '/images/desktop-pro_5.avif',
         imageMobile: '/images/desktop-pro_5.avif',

@@ -92,6 +92,15 @@
                 &.Tailwind {
                     background-color: rgba(68, 168, 179, 0.5);
                 }
+                &.Vue {
+                    background-color: rgb(65, 184, 131, 0.5);
+                }
+                &.Vite {
+                    background-color: rgb(146, 49, 190, 0.5);
+                }
+                &.GraphQL {
+                    background-color: rgb(225, 0, 152, 0.5);
+                }
             }
         }
         @media (max-width: #{$md3 + px}) {
@@ -125,8 +134,17 @@
             &.Styled {
                 background-color: rgba(165, 56, 136, 0.5);
             }
-            &.Styled {
+            &.Tailwind {
                 background-color: rgba(68, 168, 179, 0.5);
+            }
+            &.Vue {
+                background-color: rgb(65, 184, 131, 0.5);
+            }
+            &.Vite {
+                background-color: rgb(146, 49, 190, 0.5);
+            }
+            &.GraphQL {
+                background-color: rgb(225, 0, 152, 0.5);
             }
         }
     }

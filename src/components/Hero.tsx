@@ -90,7 +90,7 @@ export const Hero: FC<IHero> = ({
                             onClick={clickMouse}
                         >
                             <div className="mouse"></div>
-                            Click me!
+                            Нажми на меня!
                         </motion.div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ export type THero = {
     descIcon: string
 }
 
-export type TSkillsList = NumberID & {
+export type TSkillsList = {
     title: string
     icon: React.ReactNode
 }
