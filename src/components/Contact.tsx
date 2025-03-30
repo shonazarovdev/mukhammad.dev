@@ -27,22 +27,23 @@ export const Contact: FC = () => {
         message: "",
     });
     const [loading, setLoading] = useState<boolean>(false);
-    const notifyMessage = "Success!";
+    const notifySuccessMessage = "Заявка успешно отправлено!";
+    const notifyFailMessage = "Ошибка при отправке заявки. Попробуйте позже.";
 
     useEffect(() => {
         // Custom validation logic on formState change
         const validationErrors: FormState = {};
 
         if (formState.name && formState.name.length > 50) {
-            validationErrors.name = "Name must be less than 50 characters";
+            validationErrors.name = "Имя должно быть меньше 50 символов.";
         }
 
         if (formState.email && !regexEmail(formState.email)) {
-            validationErrors.email = "Invalid email address";
+            validationErrors.email = "Некорректный адрес электронной почты";
         }
 
         if (formState.message && !formState.message.trim()) {
-            validationErrors.message = "Message is required";
+            validationErrors.message = "Поле \"Сообщение\" обязательно для заполнения";
         }
 
         setErrors(validationErrors);
@@ -55,15 +56,8 @@ export const Contact: FC = () => {
         setFormState({ ...formState, [name]: value });
     };
 
-    const handleBlur = (
-        e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        const { name } = e.target;
+    const handleBlur = () => {
         const validationErrors: FormState = {};
-
-        if (!formState[name as keyof FormState]) {
-            validationErrors[name as keyof FormState] = `${name} is required`;
-        }
 
         setErrors({ ...errors, ...validationErrors });
     };
@@ -81,7 +75,7 @@ export const Contact: FC = () => {
                 parse_mode: "html",
                 text: send,
             });
-            toast.success(notifyMessage, {
+            toast.success(notifySuccessMessage, {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -93,7 +87,7 @@ export const Contact: FC = () => {
             });
             setFormState({ name: "", email: "", message: "" });
         } catch (error: any) {
-            toast.error(error.message, {
+            toast.error(notifyFailMessage, {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -143,15 +137,14 @@ export const Contact: FC = () => {
                             variants={A.section_title}
                             className="section-title"
                         >
-                            Contact
+                            Контакт
                         </motion.h2>
                         <motion.p
                             custom={2}
                             variants={A.section_title}
                             className="section-subtitle"
                         >
-                            Feel free to Contact me by submitting the form below
-                            and I will get back to you as soon as possible
+                            Не стесняйтесь связаться со мной, заполнив форму ниже, и я свяжусь с вами как можно скорее.
                         </motion.p>
                     </div>
                     <motion.form
@@ -162,13 +155,13 @@ export const Contact: FC = () => {
                     >
                         <div className="form-group">
                             <label htmlFor="name" className="form-group__label">
-                                Name
+                                ФИО
                             </label>
                             <input
                                 type="text"
                                 autoComplete="off"
                                 name="name"
-                                placeholder="Enter Your Name"
+                                placeholder="Введите ваше имя"
                                 className={clsx(
                                     "form-group__input",
                                     errors.name && "error"
@@ -195,7 +188,7 @@ export const Contact: FC = () => {
                                 type="text"
                                 autoComplete="off"
                                 name="email"
-                                placeholder="Enter Your Email"
+                                placeholder="Введите вашу почту"
                                 id="email"
                                 className={clsx(
                                     "form-group__input",
@@ -216,13 +209,13 @@ export const Contact: FC = () => {
                                 htmlFor="message"
                                 className="form-group__label"
                             >
-                                Message
+                                Сообщение
                             </label>
                             <textarea
                                 autoComplete="off"
                                 id="message"
                                 name="message"
-                                placeholder="Enter Your Message"
+                                placeholder="Введите ваше сообщение"
                                 className={clsx(
                                     "form-group__input",
                                     errors.message && "error"
@@ -244,7 +237,7 @@ export const Contact: FC = () => {
                                 onClick={handleReset}
                                 title="Reset"
                             >
-                                Reset
+                                Очистить
                             </button>
                             {!hasErrors &&
                             formState.name?.length !== 0 &&
@@ -256,7 +249,7 @@ export const Contact: FC = () => {
                                     className="btn btn-primary"
                                     title="Submit disabled"
                                 >
-                                    Submit
+                                    Отправить
                                 </button>
                             ) : (
                                 <button
@@ -267,7 +260,7 @@ export const Contact: FC = () => {
                                     {loading && (
                                         <VscLoading className="loading-icon" />
                                     )}
-                                    Submit
+                                    Отправить
                                 </button>
                             )}
                         </div>
