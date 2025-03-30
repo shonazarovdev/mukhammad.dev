@@ -12,8 +12,7 @@ export const Footer: FC<IFooter> = ({ data }) => {
                 <div className="footer__container">
                     <div className="footer__body">
                         <p className="footer__text">
-                            &copy; 2021. All
-                            rights are reserved
+                            &copy; 2021 MukhammadDev. Все права защищены.
                         </p>
                         <ul className="footer__main footer-list">
                             {data.map((item) => (
