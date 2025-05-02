@@ -17,7 +17,7 @@ export const ProjectBox: FC<TProjectsList> = forwardRef<HTMLLIElement, TProjects
    code,
    demo
 }, ref) => {
-    let imageType: string = "";
+    let imageType: string;
     let imageHeight: number = 0;
     const [scroll, setScroll] = useState<boolean>(false);
     const isDesktop = window.innerWidth >= 768;
