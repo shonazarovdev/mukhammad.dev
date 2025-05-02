@@ -1,10 +1,5 @@
 import React, { FC } from "react";
-import {
-    heroData,
-    projectsList,
-    skillsList,
-    socialMediaList,
-} from "../data";
+import { heroData, projectsList, skillsList, socialMediaList } from "../data";
 import { About, Contact, Hero, Portfolio } from "../components/index";
 
 export const Main: FC = () => {

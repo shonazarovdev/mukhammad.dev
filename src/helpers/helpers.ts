@@ -4,7 +4,7 @@ export function scrollToSection(sectionId: string): void {
     if (section) {
         window.scrollTo({
             top: section.offsetTop + 2,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
     }
 }
@@ -13,7 +13,7 @@ export function regexEmail(name: string): boolean {
     const re = String(name)
         .toLowerCase()
         .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        )
-    return Boolean(re)
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    return Boolean(re);
 }

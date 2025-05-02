@@ -1,84 +1,84 @@
 body {
-    font-weight: 400;
-    font-family: $fontPoppins, sans-serif;
-    font-size: $fontSize + px;
-    font-style: normal;
-    line-height: 1.5;
-    background-color: $bodyColor;
+  font-weight: 400;
+  font-family: $fontPoppins, sans-serif;
+  font-size: $fontSize + px;
+  font-style: normal;
+  line-height: 1.5;
+  background-color: $bodyColor;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 11px;
-    @include transition();
+  width: 11px;
+  @include transition();
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 3px grey;
+  box-shadow: inset 0 0 3px grey;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 5px $whiteColor;
-    background: $secondaryColor;
-    border-radius: 10px;
+  box-shadow: inset 0 0 5px $whiteColor;
+  background: $secondaryColor;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    box-shadow: inset 0 0 8px $whiteColor;
+  box-shadow: inset 0 0 8px $whiteColor;
 }
 
 /* Handle selection */
 ::selection {
-    background-color: $thirdyColor;
-    color: $whiteColor;
+  background-color: $thirdyColor;
+  color: $whiteColor;
 }
 
 .wrapper {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 [class*="__container"] {
-    max-width: $minWidthContainer + px;
-    padding: 0px 15px;
-    margin: 0px auto;
+  max-width: $minWidthContainer + px;
+  padding: 0px 15px;
+  margin: 0px auto;
 }
 
 .container {
-    max-width: $maxWidthContainer + px;
-    margin: 0px auto;
+  max-width: $maxWidthContainer + px;
+  margin: 0px auto;
 }
 
 .social-icon {
-    @include adaptiveValue("font-size", 24, 24);
+  @include adaptiveValue("font-size", 24, 24);
 }
 
 @media (max-width: #{$md2 + px}) {
-    #about,
-    #projects,
-    #contact {
-        scroll-margin-top: 100px;
-    }
+  #about,
+  #projects,
+  #contact {
+    scroll-margin-top: 100px;
+  }
 }
 
 .loading-icon {
-    animation-name: loading-spin;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
+  animation-name: loading-spin;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
 }
 
 @keyframes loading-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -18,13 +18,13 @@ export const Contact: FC = () => {
     const [formState, setFormState] = useState<FormState>({
         name: "",
         email: "",
-        message: "",
+        message: ""
     });
 
     const [errors, setErrors] = useState<FormState>({
         name: "",
         email: "",
-        message: "",
+        message: ""
     });
     const [loading, setLoading] = useState<boolean>(false);
     const notifySuccessMessage = "Заявка успешно отправлено!";
@@ -73,7 +73,7 @@ export const Contact: FC = () => {
             await axios.post(URL_API, {
                 chat_id: CHAT_ID,
                 parse_mode: "html",
-                text: send,
+                text: send
             });
             toast.success(notifySuccessMessage, {
                 position: "top-right",
@@ -83,7 +83,7 @@ export const Contact: FC = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: "light"
             });
             setFormState({ name: "", email: "", message: "" });
         } catch (error: any) {
@@ -95,7 +95,7 @@ export const Contact: FC = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: "light"
             });
         }
         setLoading(false);

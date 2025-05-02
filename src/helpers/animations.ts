@@ -8,7 +8,7 @@ const hero_text = {
         opacity: 1,
         transition: { delay: custom * 0.2 }
     })
-}
+};
 
 const hero_social = {
     hidden: {
@@ -17,9 +17,9 @@ const hero_social = {
     },
     visible: {
         x: 0,
-        opacity: 1,
+        opacity: 1
     }
-}
+};
 
 const section_title = {
     hidden: {
@@ -31,7 +31,7 @@ const section_title = {
         opacity: 1,
         transition: { delay: custom * 0.2 }
     })
-}
+};
 
 const about_text = {
     hidden: {
@@ -43,7 +43,7 @@ const about_text = {
         opacity: 1,
         transition: { delay: custom * 0.2 }
     })
-}
+};
 
 const about_skills = {
     hidden: {
@@ -55,7 +55,7 @@ const about_skills = {
         opacity: 1,
         transition: { delay: custom * 0.2 }
     })
-}
+};
 
 const projects_list = {
     hidden: (custom: number) => ({
@@ -66,6 +66,6 @@ const projects_list = {
         x: 0,
         opacity: 1
     }
-}
+};
 
-export { hero_text, hero_social, section_title, about_text, about_skills, projects_list }
+export { hero_text, hero_social, section_title, about_text, about_skills, projects_list };

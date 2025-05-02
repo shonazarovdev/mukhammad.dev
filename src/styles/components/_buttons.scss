@@ -1,49 +1,49 @@
 .btn {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: inline-block;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-    padding: 15px 50px;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: $fontSource;
-    line-height: 1.5;
-    text-align: center;
-    @include transition(0.3, ease, transform);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  padding: 15px 50px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: $fontSource;
+  line-height: 1.5;
+  text-align: center;
+  @include transition(0.3, ease, transform);
 
-    @media (any-hover: hover) {
-        &:hover {
-            transform: translateY(-3px);
-        }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: translateY(-3px);
     }
+  }
 }
 
 .btn-block {
-    padding: 15px 83px !important;
-    font-size: 20px;
-    color: #333 !important;
+  padding: 15px 83px !important;
+  font-size: 20px;
+  color: #333 !important;
 }
 
 .btn-primary {
-    border: 1px solid $thirdyColor;
-    background-color: $thirdyColor;
-    color: $mainColor;
+  border: 1px solid $thirdyColor;
+  background-color: $thirdyColor;
+  color: $mainColor;
 }
 
 .btn-ghost {
-    border: 1px solid #333;
-    background: #f1f1f1;
-    color: #333;
+  border: 1px solid #333;
+  background: #f1f1f1;
+  color: #333;
 }
 
 .disabled {
-    background-color: #f1f1f1 !important;
-    border-color: #f1f1f1;
+  background-color: #f1f1f1 !important;
+  border-color: #f1f1f1;
 
-    @media (any-hover: hover) {
-        &:hover {
-            transform: translateY(0) !important;
-        }
+  @media (any-hover: hover) {
+    &:hover {
+      transform: translateY(0) !important;
     }
+  }
 }

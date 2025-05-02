@@ -32,13 +32,6 @@ export type TProjectsList = NumberID & {
     description: string
     image: string
     imageMobile: string
-    sizes: {
-        width: number
-        height: number
-        widthMin: number
-        heightMin: number
-    }
-    scrollY: number
     technologies: string[]
     code: string
     demo: string

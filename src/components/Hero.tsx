@@ -10,12 +10,12 @@ type IHero = {
 } & THero
 
 export const Hero: FC<IHero> = ({
-    title,
-    titleIcon,
-    desc,
-    descIcon,
-    social,
-}) => {
+                                    title,
+                                    titleIcon,
+                                    desc,
+                                    descIcon,
+                                    social
+                                }) => {
     const clickMouse = () => {
         scrollToSection("about");
     };
