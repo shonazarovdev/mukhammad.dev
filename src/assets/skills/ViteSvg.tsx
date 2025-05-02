@@ -10,14 +10,14 @@ export const ViteSvg = () => {
             <defs>
                 <linearGradient id="paint0_linear_1_12" x1="-0.289491" y1="2.83893" x2="20.1441" y2="30.5893"
                                 gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#41D1FF" />
-                    <stop offset="1" stop-color="#BD34FE" />
+                    <stop stopColor="#41D1FF" />
+                    <stop offset="1" stopColor="#BD34FE" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_1_12" x1="16.5437" y1="0.681192" x2="20.2401" y2="26.0376"
                                 gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#FFEA83" />
-                    <stop offset="0.0833" stop-color="#FFDD35" />
-                    <stop offset="1" stop-color="#FFA800" />
+                    <stop stopColor="#FFEA83" />
+                    <stop offset="0.0833" stopColor="#FFDD35" />
+                    <stop offset="1" stopColor="#FFA800" />
                 </linearGradient>
             </defs>
         </svg>

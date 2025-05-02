@@ -1,7 +1,7 @@
 export const GraphqlSvg = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd"
+            <path fillRule="evenodd" clipRule="evenodd"
                   d="M17 2.34705L29.6898 9.67351V24.3265L17 31.6529L4.31018 24.3265V9.67351L17 2.34705ZM5.734 10.4956V21.2585L15.055 5.11407L5.734 10.4956ZM17 4.59292L6.25515 23.2035H27.7449L17 4.59292ZM26.321 24.6274H7.67897L17 30.0088L26.321 24.6274ZM28.266 21.2585L18.945 5.11407L28.266 10.4956V21.2585Z"
                   fill="#E10098" />
             <path
