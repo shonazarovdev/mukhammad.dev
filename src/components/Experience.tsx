@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { experienceList } from "../data/content";
 import { gsap } from "../lib/gsap";
+import { ArrowRightIcon } from "./icons";
 
 export function Experience() {
     const rootRef = useRef<HTMLElement>(null);
@@ -58,7 +59,10 @@ export function Experience() {
                             <p className="exp-row__summary">{item.summary}</p>
                             <ul className="exp-row__highlights">
                                 {item.highlights.map((highlight) => (
-                                    <li key={highlight}>{highlight}</li>
+                                    <li key={highlight}>
+                                        <ArrowRightIcon size={14} className="exp-row__bullet" />
+                                        {highlight}
+                                    </li>
                                 ))}
                             </ul>
                             <ul className="exp-row__stack">

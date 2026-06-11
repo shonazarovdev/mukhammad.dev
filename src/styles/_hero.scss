@@ -60,11 +60,19 @@
 }
 
 .hero__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: rgba(237, 237, 237, 0.65);
     text-shadow: 0 1px 12px rgba(14, 14, 14, 0.9);
+
+    svg {
+        color: var(--accent);
+        flex-shrink: 0;
+    }
 }
 
 .hero__title {
@@ -90,7 +98,7 @@
 .hero__scroll {
     position: absolute;
     right: var(--space-side);
-    bottom: clamp(4rem, 8vh, 6rem);
+    top: 40%;
     z-index: 1;
     display: flex;
     flex-direction: column;

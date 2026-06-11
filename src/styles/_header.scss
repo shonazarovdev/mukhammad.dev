@@ -126,6 +126,9 @@
     color: var(--muted);
 
     a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
         color: var(--text);
         transition: color 0.3s ease;
 

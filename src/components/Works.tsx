@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { projectsList } from "../data/content";
 import { gsap } from "../lib/gsap";
+import { ArrowUpRightIcon } from "./icons";
 
 export function Works() {
     const rootRef = useRef<HTMLElement>(null);
@@ -46,7 +47,9 @@ export function Works() {
                                 data-hover
                             >
                                 {project.title}
-                                <span className="work-row__arrow">↗</span>
+                                <span className="work-row__arrow">
+                                    <ArrowUpRightIcon size={20} />
+                                </span>
                             </a>
                             <p className="work-row__desc">{project.description}</p>
                             <ul className="work-row__tags">
@@ -59,11 +62,13 @@ export function Works() {
                             <span className="work-row__year">{project.year}</span>
                             <div className="work-row__links">
                                 <a href={project.demo} target="_blank" rel="noreferrer" data-hover>
-                                    Live ↗
+                                    Live
+                                    <ArrowUpRightIcon size={11} />
                                 </a>
                                 {project.code && (
                                     <a href={project.code} target="_blank" rel="noreferrer" data-hover>
-                                        Code ↗
+                                        Code
+                                        <ArrowUpRightIcon size={11} />
                                     </a>
                                 )}
                             </div>

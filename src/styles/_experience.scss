@@ -60,17 +60,17 @@
         border-bottom: 1px solid var(--line);
         line-height: 1.5;
 
-        &::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
         &:last-child {
             border-bottom: none;
         }
     }
+}
+
+.exp-row__bullet {
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    color: var(--accent);
 }
 
 .exp-row__stack {

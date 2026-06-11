@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { navItems, site } from "../data/content";
 import { gsap } from "../lib/gsap";
 import { getLenis, scrollToSection } from "../lib/scroll";
+import { ArrowUpRightIcon } from "./icons";
 
 export function Header() {
     const [open, setOpen] = useState(false);
@@ -101,7 +102,8 @@ export function Header() {
                 <div className="menu__footer">
                     <span>{site.availability}</span>
                     <a href={site.telegram} target="_blank" rel="noreferrer" data-hover>
-                        Telegram ↗
+                        Telegram
+                        <ArrowUpRightIcon size={12} />
                     </a>
                 </div>
             </nav>

@@ -51,7 +51,8 @@
 }
 
 .work-row__arrow {
-    font-size: 0.5em;
+    display: inline-flex;
+    color: var(--accent);
     opacity: 0;
     transform: translate(-0.4rem, 0.4rem);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -114,6 +115,9 @@
     gap: 1.25rem;
 
     a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;

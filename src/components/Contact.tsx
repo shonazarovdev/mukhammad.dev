@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { site, socialLinks } from "../data/content";
 import { gsap, SplitText } from "../lib/gsap";
+import { ArrowUpRightIcon } from "./icons";
 
 export function Contact() {
     const rootRef = useRef<HTMLElement>(null);
@@ -66,7 +67,8 @@ export function Contact() {
                 <span className="contact__line contact__line--accent">LET&apos;S BUILD IT</span>
             </div>
             <a className="contact__cta" href={site.telegram} target="_blank" rel="noreferrer" data-hover>
-                Message me on Telegram ↗
+                Message me on Telegram
+                <ArrowUpRightIcon size={16} />
             </a>
             <ul className="contact__socials">
                 {socialLinks.map((social) => (

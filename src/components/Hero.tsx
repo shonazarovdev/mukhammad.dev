@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { site } from "../data/content";
 import { gsap, SplitText } from "../lib/gsap";
 import { HeroCanvas } from "./HeroCanvas";
+import { MapPinIcon } from "./icons";
 
 interface HeroProps {
     started: boolean;
@@ -61,7 +62,10 @@ export function Hero({ started }: HeroProps) {
                 <div className="hero__meta">
                     <span className="hero__role">{site.role}</span>
                     <span className="hero__tagline">{site.tagline}</span>
-                    <span className="hero__location">📍 {site.location}</span>
+                    <span className="hero__location">
+                        <MapPinIcon size={13} />
+                        {site.location}
+                    </span>
                 </div>
                 <h1 className="hero__title">
                     <span className="hero__title-line">{site.firstName}</span>
