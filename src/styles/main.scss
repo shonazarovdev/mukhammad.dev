@@ -1,22 +1,11 @@
-// Global
-@import './global/normalize';
-@import './global/variables';
-@import './global/fonts';
-
-// Settings
-@import './settings/mixins';
-@import './settings/settings';
-@import './settings/ui';
-
-// Animations
-@import './settings/animations';
-
-// Components
-@import './components/header';
-@import './components/footer';
-@import './components/main';
-@import './components/hero';
-@import './components/buttons';
-@import './components/about';
-@import 'components/portfolio';
-@import './components/contact';
+@use "base";
+@use "preloader";
+@use "cursor";
+@use "header";
+@use "hero";
+@use "marquee";
+@use "about";
+@use "experience";
+@use "works";
+@use "contact";
+@use "footer";

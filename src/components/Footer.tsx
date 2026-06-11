@@ -1,37 +1,18 @@
-import { FC } from "react";
-import { TSocialMediaList } from "../helpers/types";
+import { site } from "../data/content";
+import { scrollToSection } from "../lib/scroll";
 
-interface IFooter {
-    data: TSocialMediaList[];
-}
+export function Footer() {
+    const year = new Date().getFullYear();
 
-export const Footer: FC<IFooter> = ({ data }) => {
     return (
         <footer className="footer">
-            <div className="footer__wrapper">
-                <div className="footer__container">
-                    <div className="footer__body">
-                        <p className="footer__text">
-                            &copy; 2021 MukhammadDev. Все права защищены.
-                        </p>
-                        <ul className="footer__main footer-list">
-                            {data.map((item) => (
-                                <li className="footer-list__item" key={item.id}>
-                                    <a
-                                        href={item.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="footer-list__link"
-                                        title={item.name}
-                                    >
-                                        {item.icon}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <span className="footer__copy">
+                © {year} {site.name}
+            </span>
+            <span className="footer__credits">React · GSAP · Three.js</span>
+            <button type="button" className="footer__top" onClick={() => scrollToSection("#home")} data-hover>
+                Back to top ↑
+            </button>
         </footer>
     );
-};
+}

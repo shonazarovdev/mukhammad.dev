@@ -1,0 +1,39 @@
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    background: var(--accent);
+}
+
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, background-color 0.25s ease;
+
+    &.is-active {
+        width: 64px;
+        height: 64px;
+        margin: -32px 0 0 -32px;
+        background: rgba(84, 197, 248, 0.12);
+        border-color: var(--accent);
+    }
+}
+
+@media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none;
+    }
+}

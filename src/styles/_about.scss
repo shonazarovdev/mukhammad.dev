@@ -1,0 +1,40 @@
+.about__text {
+    max-width: 56rem;
+    font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+    line-height: 1.45;
+    font-weight: 400;
+    margin-bottom: clamp(3rem, 7vw, 6rem);
+
+    div {
+        overflow: hidden;
+    }
+}
+
+.about__skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(2rem, 4vw, 4rem);
+}
+
+.skill-group__label {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.skill-group__item {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 1.05rem;
+    color: var(--text);
+    transition: padding-left 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        padding-left: 0.75rem;
+        color: var(--accent);
+    }
+}

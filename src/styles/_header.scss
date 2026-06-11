@@ -1,0 +1,136 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 3vw, 1.75rem) var(--space-side);
+    mix-blend-mode: difference;
+}
+
+.header__logo {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+
+    span {
+        color: var(--accent);
+    }
+}
+
+.header__location {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+
+    @media (max-width: 640px) {
+        display: none;
+    }
+}
+
+.header__burger {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: var(--text);
+        transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    &.is-open {
+        span:first-child {
+            transform: translateY(4.5px) rotate(45deg);
+        }
+
+        span:last-child {
+            transform: translateY(-4.5px) rotate(-45deg);
+        }
+    }
+}
+
+.menu {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 var(--space-side);
+    background: var(--surface);
+    clip-path: inset(0% 0% 100% 0%);
+    pointer-events: none;
+    visibility: hidden;
+
+    &.is-open {
+        pointer-events: auto;
+        visibility: visible;
+    }
+}
+
+.menu__item {
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+}
+
+.menu__link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: clamp(0.6rem, 1.5vw, 1rem) 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.05;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+
+    &:hover {
+        color: var(--accent);
+        padding-left: 1.5rem;
+    }
+}
+
+.menu__link-inner {
+    display: block;
+}
+
+.menu__index {
+    font-size: 0.9rem;
+    color: var(--accent);
+    vertical-align: super;
+    margin-right: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.menu__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(2rem, 5vw, 4rem);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+
+    a {
+        color: var(--text);
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--accent);
+        }
+    }
+}

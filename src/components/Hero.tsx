@@ -1,100 +1,77 @@
-import { FC } from "react";
-import { motion } from "framer-motion";
-import clsx from "clsx";
-import { scrollToSection } from "../helpers/helpers";
-import * as A from "../helpers/animations";
-import { THero, TSocialMediaList } from "../helpers/types";
+import { useEffect, useRef } from "react";
+import { site } from "../data/content";
+import { gsap, SplitText } from "../lib/gsap";
+import { HeroCanvas } from "./HeroCanvas";
 
-type IHero = {
-    social: TSocialMediaList[];
-} & THero
+interface HeroProps {
+    started: boolean;
+}
 
-export const Hero: FC<IHero> = ({
-                                    title,
-                                    titleIcon,
-                                    desc,
-                                    descIcon,
-                                    social
-                                }) => {
-    const clickMouse = () => {
-        scrollToSection("about");
-    };
+export function Hero({ started }: HeroProps) {
+    const rootRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const root = rootRef.current;
+        if (!started || !root) return;
+
+        const ctx = gsap.context(() => {
+            const splits: SplitText[] = [];
+            root.querySelectorAll<HTMLElement>(".hero__title-line").forEach((line) => {
+                splits.push(new SplitText(line, { type: "chars" }));
+            });
+
+            gsap.timeline()
+                .from(
+                    splits.flatMap((s) => s.chars),
+                    {
+                        yPercent: 115,
+                        stagger: 0.022,
+                        duration: 1.1,
+                        ease: "power4.out"
+                    }
+                )
+                .from(
+                    ".hero__meta > *",
+                    { y: 24, autoAlpha: 0, stagger: 0.08, duration: 0.7, ease: "power3.out" },
+                    "-=0.55"
+                )
+                .from(".hero__scroll", { autoAlpha: 0, duration: 0.6 }, "-=0.3");
+
+            gsap.to(".hero__inner", {
+                yPercent: -14,
+                autoAlpha: 0.15,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: root,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        }, root);
+
+        return () => ctx.revert();
+    }, [started]);
 
     return (
-        <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.2, once: true }}
-            id="home"
-            className="hero"
-        >
-            <div className="hero__wrapper">
-                <div className="hero__container">
-                    <div className="hero__body">
-                        <div className="hero__main">
-                            <motion.h1
-                                custom={1}
-                                variants={A.hero_text}
-                                className="title"
-                            >
-                                {title}
-                                <span className="waving-icon">{titleIcon}</span>
-                            </motion.h1>
-                            <motion.p
-                                custom={2}
-                                variants={A.hero_text}
-                                className="subtitle"
-                            >
-                                {desc}
-                                {descIcon}
-                            </motion.p>
-                            <motion.div
-                                custom={3}
-                                variants={A.hero_text}
-                                className="hero__button"
-                            >
-                                <button
-                                    type="button"
-                                    className="btn btn-primary btn-block"
-                                    onClick={() => scrollToSection("portfolio")}
-                                    title="Go to Portfolio"
-                                >
-                                    Portfolio
-                                </button>
-                            </motion.div>
-                        </div>
-                        <motion.ul
-                            variants={A.hero_social}
-                            className="hero__stacks stack-list"
-                        >
-                            {social.map((item) => (
-                                <li key={item.id} className="stack-list__item">
-                                    <a
-                                        href={item.link}
-                                        target="_blank"
-                                        className={clsx(
-                                            "stack-list__link",
-                                            item.name
-                                        )}
-                                        title={item.name}
-                                    >
-                                        {item.icon}
-                                    </a>
-                                </li>
-                            ))}
-                        </motion.ul>
-                        <motion.div
-                            custom={4}
-                            variants={A.hero_text}
-                            className="mouse__wrapper"
-                            onClick={clickMouse}
-                        >
-                            <div className="mouse"></div>
-                            Нажми на меня!
-                        </motion.div>
-                    </div>
+        <section ref={rootRef} id="home" className="hero">
+            <HeroCanvas />
+            <div className="hero__shade" aria-hidden="true" />
+            <div className="hero__inner">
+                <div className="hero__meta">
+                    <span className="hero__role">{site.role}</span>
+                    <span className="hero__tagline">{site.tagline}</span>
+                    <span className="hero__location">📍 {site.location}</span>
                 </div>
+                <h1 className="hero__title">
+                    <span className="hero__title-line">{site.firstName}</span>
+                    <span className="hero__title-line hero__title-line--accent">{site.lastName}</span>
+                </h1>
             </div>
-        </motion.section>
+            <div className="hero__scroll">
+                <span>Scroll</span>
+                <span className="hero__scroll-line" />
+            </div>
+        </section>
     );
-};
+}

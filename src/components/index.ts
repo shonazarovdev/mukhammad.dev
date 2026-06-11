@@ -1,9 +1,10 @@
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { Main } from "./Main";
-import { Hero } from "./Hero";
-import { About } from "./About";
-import { Portfolio } from "./Portfolio";
-import { Contact } from "./Contact";
-
-export { Header, Footer, Main, Hero, About, Portfolio, Contact };
+export { Preloader } from "./Preloader";
+export { Cursor } from "./Cursor";
+export { Header } from "./Header";
+export { Hero } from "./Hero";
+export { Marquee } from "./Marquee";
+export { About } from "./About";
+export { Experience } from "./Experience";
+export { Works } from "./Works";
+export { Contact } from "./Contact";
+export { Footer } from "./Footer";

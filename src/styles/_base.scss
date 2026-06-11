@@ -1,0 +1,116 @@
+:root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --text: #ededed;
+    --muted: #8d8d8d;
+    --accent: #54c5f8;
+    --line: rgba(255, 255, 255, 0.08);
+    --font-display: "Clash Display", "Arial Black", sans-serif;
+    --font-body: "General Sans", "Helvetica Neue", sans-serif;
+    --space-section: clamp(6rem, 12vw, 11rem);
+    --space-side: clamp(1.25rem, 5vw, 5rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    padding: var(--space-section) var(--space-side);
+    border-top: 1px solid var(--line);
+}
+
+.section__head {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.section__index {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+}
+
+.section__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

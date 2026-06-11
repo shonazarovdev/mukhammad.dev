@@ -1,111 +1,110 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import clsx from "clsx";
-import { scrollToSection } from "../helpers/helpers";
-import useWindowSize from "../hooks/useWindowSize";
-import { TMenuList } from "../helpers/types";
+import { navItems, site } from "../data/content";
+import { gsap } from "../lib/gsap";
+import { getLenis, scrollToSection } from "../lib/scroll";
 
-interface IHeader {
-    data: TMenuList[];
-}
+export function Header() {
+    const [open, setOpen] = useState(false);
+    const rootRef = useRef<HTMLDivElement>(null);
+    const tlRef = useRef<gsap.core.Timeline | null>(null);
 
-export const Header: FC<IHeader> = ({ data }) => {
-    const { width } = useWindowSize();
-    const [activeSection, setActiveSection] = useState("home");
-    const [openMenu, setOpenMenu] = useState(false);
-    const isLarge = width && width >= 1440;
+    useLayoutEffect(() => {
+        const root = rootRef.current;
+        if (!root) return;
 
-    const handleOpenMenu = () => {
-        // Is Mobile
-        if (width <= 768) {
-            setOpenMenu(prev => !prev);
-            if (!openMenu) {
-                window.document.body.style.overflow = "hidden";
-                window.document.body.style.height = "100vh";
-            } else {
-                window.document.body.style.removeProperty("overflow");
-                window.document.body.style.removeProperty("height");
-            }
-        }
-    };
+        const ctx = gsap.context(() => {
+            gsap.set(".menu", { clipPath: "inset(0% 0% 100% 0%)" });
 
-    const pageUp = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
+            tlRef.current = gsap
+                .timeline({ paused: true })
+                .to(".menu", {
+                    clipPath: "inset(0% 0% 0% 0%)",
+                    duration: 0.8,
+                    ease: "power4.inOut"
+                })
+                .fromTo(
+                    ".menu__link-inner",
+                    { yPercent: 120 },
+                    { yPercent: 0, stagger: 0.07, duration: 0.7, ease: "power4.out" },
+                    "-=0.35"
+                )
+                .fromTo(
+                    ".menu__footer",
+                    { autoAlpha: 0, y: 16 },
+                    { autoAlpha: 1, y: 0, duration: 0.5 },
+                    "-=0.4"
+                );
+        }, root);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = document.querySelectorAll("section");
-            sections.forEach((section) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 0 && rect.bottom >= 0) {
-                    setActiveSection(section.id);
-                }
-            });
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => ctx.revert();
     }, []);
 
+    useEffect(() => {
+        const lenis = getLenis();
+        if (open) {
+            tlRef.current?.timeScale(1).play();
+            lenis?.stop();
+        } else {
+            tlRef.current?.timeScale(1.5).reverse();
+            lenis?.start();
+        }
+    }, [open]);
+
+    const handleNavClick = (target: string) => {
+        setOpen(false);
+        window.setTimeout(() => scrollToSection(target), 600);
+    };
+
     return (
-        <div className="header">
-            <div className="header__wrapper">
-                <div className={clsx("header__body", isLarge && "container")}>
-                    <div className="header__main">
-                        <h3 className="header__logo fadeIn" onClick={pageUp}>
-                            Mukhammad.dev
-                        </h3>
-                        <div className="header__menu menu fadeIn">
-                            <nav
-                                className={clsx(
-                                    "menu__body",
-                                    openMenu && "_active"
-                                )}
+        <div ref={rootRef}>
+            <header className="header">
+                <button
+                    type="button"
+                    className="header__logo"
+                    onClick={() => handleNavClick("#home")}
+                    data-hover
+                >
+                    M.SH<span>©</span>
+                </button>
+                <span className="header__location">{site.location}</span>
+                <button
+                    type="button"
+                    className={clsx("header__burger", { "is-open": open })}
+                    onClick={() => setOpen((v) => !v)}
+                    aria-label={open ? "Close menu" : "Open menu"}
+                    data-hover
+                >
+                    <span />
+                    <span />
+                </button>
+            </header>
+
+            <nav className={clsx("menu", { "is-open": open })} aria-hidden={!open}>
+                <ul className="menu__list">
+                    {navItems.map((item, index) => (
+                        <li key={item.target} className="menu__item">
+                            <button
+                                type="button"
+                                className="menu__link"
+                                onClick={() => handleNavClick(item.target)}
+                                data-hover
                             >
-                                <ul className="menu__list">
-                                    {data.map((item) => (
-                                        <li
-                                            className={clsx(
-                                                "menu__item",
-                                                activeSection === item.name
-                                                    ? "active"
-                                                    : ""
-                                            )}
-                                            key={item.id}
-                                            onClick={() => handleOpenMenu()}
-                                        >
-                                            <p
-                                                className="menu__link"
-                                                onClick={() =>
-                                                    scrollToSection(item.name)
-                                                }
-                                            >
-                                                {item.title}
-                                            </p>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </nav>
-                        </div>
-                        <button
-                            type="button"
-                            className={clsx(
-                                "menu__icon icon-menu",
-                                openMenu && "_active"
-                            )}
-                            onClick={handleOpenMenu}
-                            title="Open menu"
-                        >
-                            {[1, 2, 3].map((_, key) => (
-                                <span key={key}></span>
-                            ))}
-                        </button>
-                    </div>
+                                <span className="menu__link-inner">
+                                    <span className="menu__index">0{index + 1}</span>
+                                    {item.title}
+                                </span>
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+                <div className="menu__footer">
+                    <span>{site.availability}</span>
+                    <a href={site.telegram} target="_blank" rel="noreferrer" data-hover>
+                        Telegram ↗
+                    </a>
                 </div>
-            </div>
+            </nav>
         </div>
     );
-};
+}

@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local backup of pre-rewrite source
+.legacy
+
+# Claude Code local config
+.claude

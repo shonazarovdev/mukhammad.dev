@@ -1,14 +1,48 @@
-import { Main } from "./components";
-import { Page } from "./layout";
+import { useCallback, useEffect, useState } from "react";
+import {
+    About,
+    Contact,
+    Cursor,
+    Experience,
+    Footer,
+    Header,
+    Hero,
+    Marquee,
+    Preloader,
+    Works
+} from "./components";
+import { marqueeItems } from "./data/content";
+import { ScrollTrigger } from "./lib/gsap";
+import { destroySmoothScroll, initSmoothScroll } from "./lib/scroll";
 
-function App() {
+export default function App() {
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        initSmoothScroll();
+        return () => destroySmoothScroll();
+    }, []);
+
+    useEffect(() => {
+        if (loaded) ScrollTrigger.refresh();
+    }, [loaded]);
+
+    const handlePreloaderComplete = useCallback(() => setLoaded(true), []);
+
     return (
-        <div className="wrapper">
-            <Page>
-                <Main />
-            </Page>
-        </div>
+        <>
+            <Preloader onComplete={handlePreloaderComplete} />
+            <Cursor />
+            <Header />
+            <main>
+                <Hero started={loaded} />
+                <Marquee items={marqueeItems} />
+                <About />
+                <Experience />
+                <Works />
+                <Contact />
+            </main>
+            <Footer />
+        </>
     );
 }
-
-export default App;

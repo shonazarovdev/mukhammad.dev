@@ -1,0 +1,127 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 0 var(--space-side) clamp(4rem, 8vh, 6rem);
+}
+
+.hero__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        rgba(14, 14, 14, 0.92) 0%,
+        rgba(14, 14, 14, 0.55) 38%,
+        rgba(14, 14, 14, 0) 70%
+    );
+}
+
+.hero__inner {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: clamp(1.5rem, 4vh, 3rem);
+    max-width: 34rem;
+}
+
+.hero__role {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+}
+
+.hero__tagline {
+    color: rgba(237, 237, 237, 0.88);
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.55;
+    text-shadow: 0 1px 12px rgba(14, 14, 14, 0.9);
+}
+
+.hero__location {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(237, 237, 237, 0.65);
+    text-shadow: 0 1px 12px rgba(14, 14, 14, 0.9);
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 11.5vw, 11rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.hero__title-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.05em;
+
+    &--accent {
+        color: transparent;
+        -webkit-text-stroke: 2px var(--text);
+    }
+}
+
+.hero__scroll {
+    position: absolute;
+    right: var(--space-side);
+    bottom: clamp(4rem, 8vh, 6rem);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+
+    @media (max-width: 1100px) {
+        display: none;
+    }
+}
+
+.hero__scroll-line {
+    width: 1px;
+    height: 56px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scaleY(0.55);
+        opacity: 0.4;
+    }
+}
