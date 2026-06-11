@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
-import { aboutText, skillGroups } from "../data/content";
+import { skillGroupItems } from "../data/content";
+import { useI18n } from "../i18n";
 import { gsap, SplitText } from "../lib/gsap";
 
 export function About() {
     const rootRef = useRef<HTMLElement>(null);
+    const { lang, t } = useI18n();
 
     useEffect(() => {
         const root = rootRef.current;
@@ -50,21 +52,23 @@ export function About() {
             cancelled = true;
             ctx?.revert();
         };
-    }, []);
+    }, [lang]);
 
     return (
         <section ref={rootRef} id="about" className="section about">
             <div className="section__head">
                 <span className="section__index">01</span>
-                <h2 className="section__title">About</h2>
+                <h2 className="section__title">{t.sections.about}</h2>
             </div>
-            <p className="about__text">{aboutText}</p>
+            <p className="about__text" key={lang}>
+                {t.about.text}
+            </p>
             <div className="about__skills">
-                {skillGroups.map((group) => (
-                    <div key={group.label} className="skill-group">
-                        <h3 className="skill-group__label">{group.label}</h3>
+                {skillGroupItems.map((items, groupIndex) => (
+                    <div key={t.about.skillLabels[groupIndex]} className="skill-group">
+                        <h3 className="skill-group__label">{t.about.skillLabels[groupIndex]}</h3>
                         <ul className="skill-group__list">
-                            {group.items.map((item) => (
+                            {items.map((item) => (
                                 <li key={item} className="skill-group__item">
                                     {item}
                                 </li>

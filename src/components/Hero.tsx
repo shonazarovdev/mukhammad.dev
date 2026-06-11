@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { site } from "../data/content";
+import { useI18n } from "../i18n";
 import { gsap, SplitText } from "../lib/gsap";
 import { HeroCanvas } from "./HeroCanvas";
 import { MapPinIcon } from "./icons";
@@ -10,6 +11,7 @@ interface HeroProps {
 
 export function Hero({ started }: HeroProps) {
     const rootRef = useRef<HTMLElement>(null);
+    const { lang, t } = useI18n();
 
     useEffect(() => {
         const root = rootRef.current;
@@ -52,7 +54,7 @@ export function Hero({ started }: HeroProps) {
         }, root);
 
         return () => ctx.revert();
-    }, [started]);
+    }, [started, lang]);
 
     return (
         <section ref={rootRef} id="home" className="hero">
@@ -60,11 +62,11 @@ export function Hero({ started }: HeroProps) {
             <div className="hero__shade" aria-hidden="true" />
             <div className="hero__inner">
                 <div className="hero__meta">
-                    <span className="hero__role">{site.role}</span>
-                    <span className="hero__tagline">{site.tagline}</span>
+                    <span className="hero__role">{t.hero.role}</span>
+                    <span className="hero__tagline">{t.hero.tagline}</span>
                     <span className="hero__location">
                         <MapPinIcon size={13} />
-                        {site.location}
+                        {t.hero.location}
                     </span>
                 </div>
                 <h1 className="hero__title">
@@ -73,7 +75,7 @@ export function Hero({ started }: HeroProps) {
                 </h1>
             </div>
             <div className="hero__scroll">
-                <span>Scroll</span>
+                <span>{t.hero.scroll}</span>
                 <span className="hero__scroll-line" />
             </div>
         </section>

@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { navItems, site } from "../data/content";
+import { languages, useI18n } from "../i18n";
 import { gsap } from "../lib/gsap";
 import { getLenis, scrollToSection } from "../lib/scroll";
 import { ArrowUpRightIcon } from "./icons";
@@ -9,6 +10,7 @@ export function Header() {
     const [open, setOpen] = useState(false);
     const rootRef = useRef<HTMLDivElement>(null);
     const tlRef = useRef<gsap.core.Timeline | null>(null);
+    const { lang, setLang, t } = useI18n();
 
     useLayoutEffect(() => {
         const root = rootRef.current;
@@ -68,17 +70,32 @@ export function Header() {
                 >
                     M.SH<span>©</span>
                 </button>
-                <span className="header__location">{site.location}</span>
-                <button
-                    type="button"
-                    className={clsx("header__burger", { "is-open": open })}
-                    onClick={() => setOpen((v) => !v)}
-                    aria-label={open ? "Close menu" : "Open menu"}
-                    data-hover
-                >
-                    <span />
-                    <span />
-                </button>
+                <span className="header__location">{t.hero.location}</span>
+                <div className="header__right">
+                    <div className="lang-switch" role="group" aria-label="Language">
+                        {languages.map((code) => (
+                            <button
+                                key={code}
+                                type="button"
+                                className={clsx("lang-switch__btn", { "is-active": code === lang })}
+                                onClick={() => setLang(code)}
+                                data-hover
+                            >
+                                {code.toUpperCase()}
+                            </button>
+                        ))}
+                    </div>
+                    <button
+                        type="button"
+                        className={clsx("header__burger", { "is-open": open })}
+                        onClick={() => setOpen((v) => !v)}
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        data-hover
+                    >
+                        <span />
+                        <span />
+                    </button>
+                </div>
             </header>
 
             <nav className={clsx("menu", { "is-open": open })} aria-hidden={!open}>
@@ -93,14 +110,14 @@ export function Header() {
                             >
                                 <span className="menu__link-inner">
                                     <span className="menu__index">0{index + 1}</span>
-                                    {item.title}
+                                    {t.nav[item.key]}
                                 </span>
                             </button>
                         </li>
                     ))}
                 </ul>
                 <div className="menu__footer">
-                    <span>{site.availability}</span>
+                    <span>{t.menu.availability}</span>
                     <a href={site.telegram} target="_blank" rel="noreferrer" data-hover>
                         Telegram
                         <ArrowUpRightIcon size={12} />

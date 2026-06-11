@@ -2,7 +2,6 @@ export interface Project {
     id: number;
     title: string;
     year: string;
-    description: string;
     technologies: string[];
     demo: string;
     code?: string;
@@ -14,21 +13,12 @@ export interface SocialLink {
     link: string;
 }
 
-export interface ExperienceItem {
-    role: string;
+export interface ExperienceStatic {
     company: string;
-    period: string;
-    summary: string;
-    highlights: string[];
     stack: string[];
 }
 
-export interface SkillGroup {
-    label: string;
-    items: string[];
-}
-
 export interface NavItem {
-    title: string;
+    key: "home" | "about" | "experience" | "works" | "contact";
     target: string;
 }

@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
 import { site, socialLinks } from "../data/content";
+import { useI18n } from "../i18n";
 import { gsap, SplitText } from "../lib/gsap";
 import { ArrowUpRightIcon } from "./icons";
 
 export function Contact() {
     const rootRef = useRef<HTMLElement>(null);
+    const { lang, t } = useI18n();
 
     useEffect(() => {
         const root = rootRef.current;
@@ -54,20 +56,20 @@ export function Contact() {
             cancelled = true;
             ctx?.revert();
         };
-    }, []);
+    }, [lang]);
 
     return (
         <section ref={rootRef} id="contact" className="section contact">
             <div className="section__head">
                 <span className="section__index">04</span>
-                <h2 className="section__title">Contact</h2>
+                <h2 className="section__title">{t.sections.contact}</h2>
             </div>
-            <div className="contact__heading">
-                <span className="contact__line">HAVE AN IDEA?</span>
-                <span className="contact__line contact__line--accent">LET&apos;S BUILD IT</span>
+            <div className="contact__heading" key={lang}>
+                <span className="contact__line">{t.contact.line1}</span>
+                <span className="contact__line contact__line--accent">{t.contact.line2}</span>
             </div>
             <a className="contact__cta" href={site.telegram} target="_blank" rel="noreferrer" data-hover>
-                Message me on Telegram
+                {t.contact.cta}
                 <ArrowUpRightIcon size={16} />
             </a>
             <ul className="contact__socials">

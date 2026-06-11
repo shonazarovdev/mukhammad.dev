@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
-import { experienceList } from "../data/content";
+import { experienceStatic } from "../data/content";
+import { useI18n } from "../i18n";
 import { gsap } from "../lib/gsap";
 import { ArrowRightIcon } from "./icons";
 
 export function Experience() {
     const rootRef = useRef<HTMLElement>(null);
+    const { lang, t } = useI18n();
 
     useEffect(() => {
         const root = rootRef.current;
@@ -39,40 +41,45 @@ export function Experience() {
         }, root);
 
         return () => ctx.revert();
-    }, []);
+    }, [lang]);
 
     return (
         <section ref={rootRef} id="experience" className="section experience">
             <div className="section__head">
                 <span className="section__index">02</span>
-                <h2 className="section__title">Experience</h2>
+                <h2 className="section__title">{t.sections.experience}</h2>
             </div>
             <div className="experience__list">
-                {experienceList.map((item) => (
-                    <article key={`${item.role}-${item.company}`} className="exp-row">
-                        <div className="exp-row__left">
-                            <h3 className="exp-row__role">{item.role}</h3>
-                            <span className="exp-row__company">{item.company}</span>
-                            <span className="exp-row__period">{item.period}</span>
-                        </div>
-                        <div className="exp-row__right">
-                            <p className="exp-row__summary">{item.summary}</p>
-                            <ul className="exp-row__highlights">
-                                {item.highlights.map((highlight) => (
-                                    <li key={highlight}>
-                                        <ArrowRightIcon size={14} className="exp-row__bullet" />
-                                        {highlight}
-                                    </li>
-                                ))}
-                            </ul>
-                            <ul className="exp-row__stack">
-                                {item.stack.map((tech) => (
-                                    <li key={tech}>{tech}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </article>
-                ))}
+                {experienceStatic.map((item, index) => {
+                    const text = t.experience.items[index];
+                    if (!text) return null;
+
+                    return (
+                        <article key={item.company} className="exp-row">
+                            <div className="exp-row__left">
+                                <h3 className="exp-row__role">{text.role}</h3>
+                                <span className="exp-row__company">{item.company}</span>
+                                <span className="exp-row__period">{text.period}</span>
+                            </div>
+                            <div className="exp-row__right">
+                                <p className="exp-row__summary">{text.summary}</p>
+                                <ul className="exp-row__highlights">
+                                    {text.highlights.map((highlight) => (
+                                        <li key={highlight}>
+                                            <ArrowRightIcon size={14} className="exp-row__bullet" />
+                                            {highlight}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <ul className="exp-row__stack">
+                                    {item.stack.map((tech) => (
+                                        <li key={tech}>{tech}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </article>
+                    );
+                })}
             </div>
         </section>
     );
